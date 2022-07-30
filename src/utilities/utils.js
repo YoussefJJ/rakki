@@ -19,3 +19,11 @@ export function formatDate(year, month, day) {
     return date;
 }
 
+export function getRegionName(region) {
+    const regionNames = new Intl.DisplayNames(
+        ['en'], {type: 'region'}
+    );
+    const regionName = regionNames.of(region);
+    return regionName;
+}
+

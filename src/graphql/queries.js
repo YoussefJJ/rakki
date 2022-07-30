@@ -47,6 +47,28 @@ export const GET_ANIME_LIST = gql`
     }
 `;
 
+export const GET_RECOMMENDATIONS = gql`
+    query getRecommendations ($id: Int, $perPage: Int, $page: Int) {
+    Media (id: $id) {
+      id
+      recommendations (sort: RATING_DESC, perPage: $perPage, page: $page) {
+        edges {
+          node {
+            id
+            mediaRecommendation {
+              title {
+                english
+                romaji
+              }
+              bannerImage
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 export const GET_ANIME = gql`
     query GetAnime($id: Int!) {
         Media(id: $id) {

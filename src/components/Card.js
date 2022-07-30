@@ -1,4 +1,6 @@
 import React from 'react'
+import AnimeDetails from './AnimeDetails'
+import Recommendation from './Recommendation'
 
 export const Card = (props) => {  
 
@@ -14,36 +16,14 @@ export const Card = (props) => {
           <img src={props.anime.coverImage.large} alt="anime" className="rounded" />
           <h1 className="text-white text-3xl text-center md:text-4xl md:text-left md:hidden font-bold p-3">{props.anime.title.romaji}</h1>
           {/* General Info */}
-          <div className='text-white w-full bg-slate-700/90 mt-5 rounded p-4'>
-          <div className='flex flex-wrap justify-between items-center'>
-              <strong>Format: </strong>
-              <span className='text-sm text-gray-300'>{props.anime.format}</span>
-            </div>
-            <div className='flex flex-wrap justify-between items-center'>
-              <strong>Duration: </strong>
-              <span className='text-sm text-gray-300'>{props.anime.duration} mins</span>
-            </div>
-            <div className='flex flex-wrap justify-between items-center'>
-              <strong>Episodes: </strong>
-              <span className='text-sm text-gray-300'>{props.anime.episodes} episodes</span>
-            </div>
-            <div className='flex flex-wrap justify-between items-center'>
-              <strong>Country of Origin: </strong>
-              <span className='text-sm text-gray-300'>{props.anime.countryOfOrigin}</span>
-            </div>
-            <div className='flex flex-wrap justify-between items-center'>
-              <strong>Status: </strong>
-              <span className='text-sm text-gray-300'>{props.anime.status}</span>
-              <div className='flex flex-wrap justify-between items-center w-full'>
-                <strong>Watch on: </strong>
-                <div className='flex justify-center'>
-                    {props.anime.externalLinks.map(extLink => (<a href={extLink.url} className="mr-1 last:mr-0">
-                      <img src={extLink.icon} style={{height: '16px', width: '16px'}}></img>
-                    </a>))}
-                </div>
-              </div>
-            </div>
-          </div>
+          <AnimeDetails
+            format={props.anime.format}
+            status={props.anime.status}
+            duration={props.anime.duration}
+            episodes={props.anime.episodes}
+            countryOfOrigin={props.anime.countryOfOrigin}
+            externalLinks={props.anime.externalLinks}
+          />
         </div>
         <div className="flex flex-col px-5 py-4 md:w-2/3 space-y-3">
           <h1 className="hidden md:block text-white text-2xl text-center md:text-4xl md:text-left font-bold">{props.anime.title.romaji}</h1>
@@ -66,6 +46,11 @@ export const Card = (props) => {
                   ))}
                 </div>
               </span> */}
+            </div>
+          </div>
+          <div className='flex flex-col-reverse items-start justify-center m-auto p-5 h-full'>
+            <div className='self-end'>
+              <Recommendation from={props.anime}/>
             </div>
           </div>
         </div>

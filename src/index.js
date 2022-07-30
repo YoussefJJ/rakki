@@ -9,6 +9,11 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
   const client = new ApolloClient({
     uri: 'https://graphql.anilist.co/',
     cache: new InMemoryCache(),
+    defaultOptions: {
+      query: {
+        fetchPolicy: 'network-only',
+      },
+    }
   });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { GET_ANIME } from "../graphql/queries";
 import { useQuery } from "@apollo/client";
 import Card from "./Card";
-import { capitalizeEachFirstLetter, capitalizeFirstLetter, formatDate } from "../utilities/utils";
+import { capitalizeEachFirstLetter, capitalizeFirstLetter, formatDate, getRegionName } from "../utilities/utils";
 
 function AnimeScreen() {
   const [anime, setAnime] = useState();
@@ -44,10 +44,8 @@ function AnimeScreen() {
 
     const externalLinks = animeData.externalLinks.filter(extLink => extLink.type === "STREAMING")
 
-    const regionNames = new Intl.DisplayNames(
-      ['en'], {type: 'region'}
-    );
-    const regionName = regionNames.of(animeData.countryOfOrigin);
+    const regionName = getRegionName(animeData.region);
+    
     const source = capitalizeEachFirstLetter(animeData.source.replace(/_/g, " "));
 
     const status = capitalizeFirstLetter(animeData.status);
