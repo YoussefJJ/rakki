@@ -77,7 +77,7 @@ export const RecommendationsModal = ({ from }) => {
         >
           {recommendations.map((recommendation) => {
             return (
-              <Recommendation data={recommendation}/>
+              <Recommendation key={recommendation.id} data={recommendation}/>
             );
           })}
         </div>
