@@ -25,7 +25,7 @@ export const Modal = ({modalTitle, children, buttonText}) => {
           className="fixed inset-0 bg-gray-700 overflow-y-auto bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
             {/* Content */}
             <div 
-            className="bg-white rounded max-w-full md:max-w-4/5 space-y-3 flex flex-col"
+            className="bg-white rounded max-w-full md:w-4/5 space-y-3 flex flex-col"
             style={{maxHeight: '90%'}}>
               {/* Header */}
               <div className="flex flex-row justify-between items-center p-2">
