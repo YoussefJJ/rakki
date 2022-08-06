@@ -9,7 +9,7 @@ const Recommendation = ({
 }) => {
   const genres = data.genres.map(genre => genre).join(', ')
   return (
-    <RecContent onClick>
+    <RecContent>
         <RecTitle englishTitle={data.title.english} romajiTitle={data.title.romaji}/>
         <RecImage imageUrl={data.bannerImage ? data.bannerImage: data.coverImage.medium } altTitle={data.title.romaji}/>
         <RecGenres genres={genres}/>
