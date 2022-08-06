@@ -11,7 +11,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
     cache: new InMemoryCache(),
     defaultOptions: {
       query: {
-        fetchPolicy: 'network-only',
+        fetchPolicy: 'cache-first',
       },
     }
   });
