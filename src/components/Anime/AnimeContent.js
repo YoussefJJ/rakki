@@ -4,6 +4,7 @@ import RecommendationsModal from '../RecommendationsModal'
 import AnimeInfo from './AnimeInfo'
 import AnimePlot from './AnimePlot'
 import AnimeTitle from './AnimeTitle'
+import TrailerModal from '../TrailerModal'
 
 export const AnimeContent = ({anime}) => {  
 //   if loading {
@@ -17,7 +18,8 @@ export const AnimeContent = ({anime}) => {
         <div className="flex flex-col justify-center items-center p-4 md:w-2/5">
           <img src={anime.coverImage.large} alt="anime" className="rounded" />
           {/* <h1 className="text-white text-3xl text-center md:text-4xl md:text-left md:hidden font-bold p-3">{anime.title.romaji}</h1> */}
-          <AnimeTitle mobileScreen={true} language="en">{anime.title.romaji}</AnimeTitle>
+          <AnimeTitle mobileScreen={true}>{anime.title.romaji}</AnimeTitle>
+          {anime.title.romaji !== anime.title.english && <AnimeTitle small mobileScreen={true}>{anime.title.english}</AnimeTitle>}
           {/* General Info */}
           <AnimeDetails
             format={anime.format}
@@ -29,7 +31,8 @@ export const AnimeContent = ({anime}) => {
           />
         </div>
         <div className="flex flex-col justify-start px-5 py-4 md:w-2/3 space-y-3">
-        <AnimeTitle mobileScreen={false} language="en">{anime.title.romaji}</AnimeTitle>
+        <AnimeTitle mobileScreen={false}>{anime.title.romaji}</AnimeTitle>
+        {anime.title.romaji !== anime.title.english && <AnimeTitle small mobileScreen={false}>{anime.title.english}</AnimeTitle>}
           {/* <h1 className="hidden md:block text-white text-2xl text-center md:text-4xl md:text-left font-bold">{anime.title.romaji}</h1> */}
           <div className='flex flex-col justify-between'>
             <AnimePlot plot={anime.description}/>
@@ -41,7 +44,12 @@ export const AnimeContent = ({anime}) => {
           </div>
           <div className='flex justify-center p-5 grow'>
             <div className='self-end'>
-              <RecommendationsModal from={anime}/>
+              <div className='flex flex-col space-y-3 justify-between md:flex-row md:space-y-0 md:space-x-7'>
+                {anime.trailer?
+                (<TrailerModal mediaTitle={anime.title.romaji} trailer={anime.trailer}/>)
+                : null}
+                <RecommendationsModal from={anime}/>
+              </div>
             </div>
           </div>
         </div>
