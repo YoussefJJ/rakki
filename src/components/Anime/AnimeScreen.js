@@ -3,6 +3,7 @@ import { GET_ANIME } from "../../graphql/queries";
 import { useQuery } from "@apollo/client";
 import { AnimeContent } from "./AnimeContent";
 import { capitalizeEachFirstLetter, capitalizeFirstLetter, formatDate, getRegionName } from "../../utilities/utils";
+import AnimeBackground from "./AnimeBackground";
 
 function AnimeScreen() {
   const [anime, setAnime] = useState();
@@ -62,10 +63,7 @@ function AnimeScreen() {
 
   return (
     <>
-      <div
-        className="fixed bg-cover bg-no-repeat w-full h-screen top-0 left-0 -z-10"
-        style={{ backgroundImage: `url('${bgImage}')` }}
-      ></div>
+      <AnimeBackground imageUrl={bgImage}/>
       <div className="flex h-screen">
         <AnimeContent anime={anime} />
       </div>
