@@ -24,3 +24,173 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+
+  .scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #000 #fff;
+  }
+  
+  
+  /* For Chrome, EDGE, Opera, Others */
+  .scrollbar::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 6px; 
+    background: transparent;
+  }
+  
+  .scrollbar::-webkit-scrollbar-thumb { 
+    border-radius: 6px;
+    background:#8e939c;
+  }
+}
+
+.loader {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #3498db;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  left: 50%;
+  top: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+
+.switch {
+  scale: 0.5;
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ca2222;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2ab934;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(55px);
+  -ms-transform: translateX(55px);
+  transform: translateX(55px);
+}
+
+/*------ ADDED CSS ---------*/
+.on
+{
+  display: none;
+}
+
+.on, .off
+{
+  color: white;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  font-size: 10px;
+  font-family: Verdana, sans-serif;
+}
+
+input:checked+ .slider .on
+{display: block;}
+
+input:checked + .slider .off
+{display: none;}
+
+/*--------- END --------*/
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;}
+
+
+#recommendation-img {
+  transition: transform .5s ease, opacity .5s ease;
+  opacity: 1;
+  transform: scale(1);
+}
+
+#recommendation-container:hover #recommendation-img {
+  transform: scale(1.1);
+  opacity: 0.5;
+}
+/* absolute text-center z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 */
+.recommendation-title {
+  position: absolute;
+  text-align: center;
+  z-index: 50;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  transition: transform .5s ease, opacity .5s ease;
+  opacity: 0;
+}
+
+#recommendation-container:hover .recommendation-title {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+#recommendation-genres {
+  position: absolute;
+  z-index: 50;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+  opacity: 0;
+  border-top-right-radius: 1rem;
+  transition: transform .5s ease, opacity .5s ease;
+}
+
+#recommendation-container:hover #recommendation-genres {
+  transform: translateY(0);
+  opacity: 0.9;
+}

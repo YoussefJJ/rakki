@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import AnimeScreen from './components/AnimeScreen';
+import AnimeScreen from './components/Anime/AnimeScreen';
 
 function App() {
   

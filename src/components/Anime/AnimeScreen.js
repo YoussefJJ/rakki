@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { GET_ANIME } from "../graphql/queries";
+import { GET_ANIME } from "../../graphql/queries";
 import { useQuery } from "@apollo/client";
-import Card from "./Card";
-import { capitalizeEachFirstLetter, capitalizeFirstLetter, formatDate, getRegionName } from "../utilities/utils";
+import { AnimeContent } from "./AnimeContent";
+import { capitalizeEachFirstLetter, capitalizeFirstLetter, formatDate, getRegionName } from "../../utilities/utils";
 
 function AnimeScreen() {
   const [anime, setAnime] = useState();
@@ -44,7 +44,7 @@ function AnimeScreen() {
 
     const externalLinks = animeData.externalLinks.filter(extLink => extLink.type === "STREAMING")
 
-    const regionName = getRegionName(animeData.region);
+    const regionName = getRegionName(animeData.countryOfOrigin);
     
     const source = capitalizeEachFirstLetter(animeData.source.replace(/_/g, " "));
 
@@ -67,7 +67,7 @@ function AnimeScreen() {
         style={{ backgroundImage: `url('${bgImage}')` }}
       ></div>
       <div className="flex h-screen">
-        <Card anime={anime} />
+        <AnimeContent anime={anime} />
       </div>
     </>
   );
