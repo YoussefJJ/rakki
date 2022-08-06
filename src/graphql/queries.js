@@ -97,8 +97,8 @@ export const GET_ANIME = gql`
             genres
             siteUrl
             trailer {
-                site
                 id
+                site
             }
             bannerImage
             startDate {
