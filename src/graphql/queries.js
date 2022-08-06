@@ -3,7 +3,7 @@ import { gql } from "@apollo/client";
 export const GET_ANIME_LIST = gql`
     query GetAnimeList {
         Page(perPage: 50) {
-            media {
+            media(type: ANIME) {
                 id
                 title {
                     romaji
@@ -56,6 +56,9 @@ export const GET_RECOMMENDATIONS = gql`
           node {
             id
             mediaRecommendation {
+              id
+              genres
+              averageScore
               title {
                 english
                 romaji
