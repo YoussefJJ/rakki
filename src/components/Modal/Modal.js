@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export const Modal = ({modalTitle, children}) => {
+export const Modal = ({modalTitle, children, buttonText}) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = (event) => {
@@ -15,7 +15,7 @@ export const Modal = ({modalTitle, children}) => {
         type="button"
         onClick={() => setShowModal(true)}
       >
-        Show Recommendations
+        {buttonText}
       </button>
       {showModal ? (
         <>

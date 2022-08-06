@@ -73,7 +73,7 @@ export const RecommendationsModal = ({ from }) => {
 
   if (loading) return <p>Loading...</p>;
   return (
-    <Modal modalTitle={`Anime like ${from.title.romaji}`}>
+    <Modal modalTitle={`Anime like ${from.title.romaji}`} buttonText="Show Recommendations">
       <div className="flex flex-col items-center justify-center">
         <div
           className="flex flex-col w-full justify-center items-center px-1 space-y-3"
