@@ -2,6 +2,7 @@ import { useLazyQuery, useQuery } from "@apollo/client";
 import React, { useState, useEffect } from "react";
 import { GET_RECOMMENDATIONS } from "../graphql/queries";
 import Modal from "./Modal/Modal";
+import LoadMoreButton from "./Recommendations/LoadMoreButton";
 import Recommendation from "./Recommendations/Recommendation";
 import Spinner from "./Spinner/Spinner";
 
@@ -86,14 +87,7 @@ export const RecommendationsModal = ({ from }) => {
           })}
         </div>
         <div className="w-full">
-          <button 
-          className="w-full
-          flex justify-center items-center
-          p-5 text-white text-center bg-slate-600 font-bold
-          text-2xl hover:bg-slate-500 shadow-md"
-          onClick={handleLoadMore}>
-            {buttonClickLoading ? (<Spinner/>): "Load more"}
-          </button>
+          <LoadMoreButton buttonText="See more" onClick={handleLoadMore} loading={buttonClickLoading}/>
         </div>
         
 
