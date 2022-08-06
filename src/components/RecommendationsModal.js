@@ -4,7 +4,6 @@ import { GET_RECOMMENDATIONS } from "../graphql/queries";
 import Modal from "./Modal/Modal";
 import LoadMoreButton from "./Recommendations/LoadMoreButton";
 import Recommendation from "./Recommendations/Recommendation";
-import Spinner from "./Spinner/Spinner";
 
 export const RecommendationsModal = ({ from }) => {
 
@@ -28,9 +27,7 @@ export const RecommendationsModal = ({ from }) => {
     },
     skip,
     onCompleted: (data) => {
-      console.log(data);
       const recs = processRecommendations(data);
-      console.log(recs);
       setRecommendations(recommendations.concat(recs));
     },
     onError: (error) => {
@@ -56,9 +53,7 @@ export const RecommendationsModal = ({ from }) => {
       page: page,
     },
     onCompleted: (data) => {
-      console.log(data);
       const recs = processRecommendations(data);
-      console.log(recs);
       setRecommendations(recommendations.concat(recs));
     }
   }, { fetchPolicy: "no-cache" });
@@ -89,8 +84,6 @@ export const RecommendationsModal = ({ from }) => {
         <div className="w-full">
           <LoadMoreButton buttonText="See more" onClick={handleLoadMore} loading={buttonClickLoading}/>
         </div>
-        
-
       </div>
     </Modal>
   );
