@@ -197,3 +197,8 @@ input:checked + .slider .off
   transform: translateY(0);
   opacity: 0.9;
 }
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+}
