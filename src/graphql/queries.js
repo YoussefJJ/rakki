@@ -59,6 +59,10 @@ export const GET_RECOMMENDATIONS = gql`
               id
               genres
               averageScore
+              coverImage {
+                large
+                medium
+              }
               title {
                 english
                 romaji
