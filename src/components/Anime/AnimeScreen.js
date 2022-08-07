@@ -43,9 +43,9 @@ function AnimeScreen() {
     );
 
 
-    const description = animeData.description.replace(/\<br\>/g, "\n");
+    const description = animeData.description?.replace(/\<br\>/g, "\n");
 
-    const externalLinks = animeData.externalLinks.filter(extLink => extLink.type === "STREAMING")
+    const externalLinks = animeData.externalLinks?.filter(extLink => extLink.type === "STREAMING")
 
     const regionName = getRegionName(animeData.countryOfOrigin);
     
