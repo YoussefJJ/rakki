@@ -12,7 +12,7 @@ export const Modal = ({modalTitle, children, buttonText, disabled, disableText})
     <>
       <button
         disabled={disabled}
-        className='bg-blue-800 text-white active:bg-blue-900 font-bold uppercase text-md px-6 py-3 rounded-md shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
+        className='bg-blue-800 text-white active:bg-blue-900 font-bold uppercase text-md px-6 py-3 rounded-md shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150'
         style={{
           opacity: disabled ? '0.3' : '1',
         }}
