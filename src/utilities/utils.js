@@ -32,3 +32,14 @@ export function getRandomInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min);
 }
+
+export const getAnimeCover = (anime) => {
+  if (anime.bannerImage) {
+    return anime.bannerImage;
+  }
+  if (anime.coverImage) {
+    return anime.coverImage.extraLarge || anime.coverImage.large || anime.coverImage.medium; 
+  } else {
+    return null;
+  }
+}
