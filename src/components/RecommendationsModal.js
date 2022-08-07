@@ -66,10 +66,14 @@ export const RecommendationsModal = ({ from }) => {
     setPage(page + 1);
   }
 
-
+  console.log(recommendations)
   if (loading) return <p>Loading...</p>;
   return (
-    <Modal modalTitle={`Anime like ${from.title.romaji}`} buttonText="Show Recommendations">
+    <Modal 
+    modalTitle={`Anime like ${from.title.romaji}`} 
+    buttonText="Show Recommendations"
+    disableText="No recommendations found" 
+    disabled={recommendations.length === 0}>
       <div className="flex flex-col items-center justify-center">
         <div
           className="flex flex-col w-full justify-center items-center px-1 space-y-3"

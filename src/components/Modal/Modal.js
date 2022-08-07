@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export const Modal = ({modalTitle, children, buttonText}) => {
+export const Modal = ({modalTitle, children, buttonText, disabled, disableText}) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = (event) => {
@@ -11,11 +11,15 @@ export const Modal = ({modalTitle, children, buttonText}) => {
   return (
     <>
       <button
-        className="bg-blue-800 text-white active:bg-blue-900 font-bold uppercase text-md px-6 py-3 rounded-md shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        disabled={disabled}
+        className='bg-blue-800 text-white active:bg-blue-900 font-bold uppercase text-md px-6 py-3 rounded-md shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
+        style={{
+          opacity: disabled ? '0.3' : '1',
+        }}
         type="button"
         onClick={() => setShowModal(true)}
       >
-        {buttonText}
+        {disabled && disableText ? disableText : buttonText}
       </button>
       {showModal ? (
         <>
