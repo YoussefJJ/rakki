@@ -1,47 +1,21 @@
 import { gql } from "@apollo/client";
 
 export const GET_ANIME_LIST = gql`
-    query GetAnimeList {
-        Page(perPage: 50) {
-            media(type: ANIME) {
+    query GetAnimeList($page: Int!) {
+        Page(perPage: 50, page: $page) {
+            media(type: ANIME,status_not_in: NOT_YET_RELEASED, sort: POPULARITY_DESC, isAdult: false) {
                 id
                 title {
                     romaji
                     english
                     native
                 }
-                description
                 coverImage {
                     large
+                    medium
                 }
-                episodes
-                format
-                status
-                duration
                 averageScore
-                genres
-                siteUrl
-                trailer {
-                    site
-                    id
-                }
                 bannerImage
-                startDate {
-                    year
-                    month
-                    day
-                }
-                endDate {
-                    year
-                    month
-                    day
-                }
-                studios {
-                    nodes {
-                        name
-                    }
-                }
-                averageScore
             }
         }
     }
