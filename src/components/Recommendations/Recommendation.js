@@ -1,4 +1,5 @@
 import React from 'react'
+import { getAnimeCover } from '../../utilities/utils'
 import RecContent from './RecContent'
 import RecGenres from './RecGenres'
 import RecImage from './RecImage'
@@ -11,7 +12,7 @@ const Recommendation = ({
   return (
     <RecContent>
         <RecTitle englishTitle={data.title.english} romajiTitle={data.title.romaji}/>
-        <RecImage imageUrl={data.bannerImage ? data.bannerImage: data.coverImage.medium } altTitle={data.title.romaji}/>
+        <RecImage imageUrl={getAnimeCover(data)} altTitle={data.title.romaji}/>
         <RecGenres genres={genres}/>
     </RecContent>
   )
