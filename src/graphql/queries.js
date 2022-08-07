@@ -3,7 +3,14 @@ import { gql } from "@apollo/client";
 export const GET_ANIME_LIST = gql`
     query GetAnimeList($page: Int!) {
         Page(perPage: 50, page: $page) {
-            media(type: ANIME,status_not_in: NOT_YET_RELEASED, sort: POPULARITY_DESC, isAdult: false) {
+            media(
+              type: ANIME, 
+              status_not_in: NOT_YET_RELEASED, 
+              format_not_in: [SPECIAL, MUSIC],
+              sort: SCORE_DESC
+              isAdult: false,
+              averageScore_greater: 55
+            ) {
                 id
                 title {
                     romaji
@@ -34,6 +41,7 @@ export const GET_RECOMMENDATIONS = gql`
               genres
               averageScore
               coverImage {
+                extraLarge
                 large
                 medium
               }
