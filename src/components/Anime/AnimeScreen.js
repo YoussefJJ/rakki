@@ -2,24 +2,26 @@ import React, { useState } from "react";
 import { GET_ANIME } from "../../graphql/queries";
 import { useQuery } from "@apollo/client";
 import { AnimeContent } from "./AnimeContent";
-import { capitalizeEachFirstLetter, capitalizeFirstLetter, formatDate, getRegionName } from "../../utilities/utils";
+import { capitalizeEachFirstLetter, capitalizeFirstLetter, formatDate, getAnimeCover, getRegionName } from "../../utilities/utils";
 import AnimeBackground from "./AnimeBackground";
+import { useParams } from "react-router-dom";
 
 function AnimeScreen() {
+  const animeId = useParams().id || 1;
   const [anime, setAnime] = useState();
   const [bgImage, setBgImage] = useState(
     "https://www.solidbackgrounds.com/images/2560x1440/2560x1440-davys-grey-solid-color-background.jpg"
   );
   const { data, loading, error } = useQuery(GET_ANIME, {
     variables: {
-      id: 16498,
+      id: +animeId,
     },
     onCompleted: (data) => {
       console.log(data);
       const animeData = processAnimeData(data);
       console.log(animeData);
       setAnime(animeData);
-      setBgImage(data.Media.bannerImage || data.Media.coverImage.large);
+      setBgImage(getAnimeCover(animeData));
     },
     onError: (error) => {
       console.log(error);
@@ -47,7 +49,7 @@ function AnimeScreen() {
 
     const regionName = getRegionName(animeData.countryOfOrigin);
     
-    const source = capitalizeEachFirstLetter(animeData.source.replace(/_/g, " "));
+    // const source = capitalizeEachFirstLetter(animeData.source.replace(/_/g, " "));
 
     const status = capitalizeFirstLetter(animeData.status);
 
@@ -55,7 +57,7 @@ function AnimeScreen() {
       recommendation.node.mediaRecommendation
     )
     console.log(recommendations)
-    return { ...animeData, startDate, status, endDate, description, externalLinks, countryOfOrigin: regionName, source, recommendations };
+    return { ...animeData, startDate, status, endDate, description, externalLinks, countryOfOrigin: regionName, recommendations };
   }
 
   if (loading) return "Loading...";
