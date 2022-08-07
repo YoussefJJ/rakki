@@ -35,17 +35,20 @@ function AnimeDetails({
         <strong>Status: </strong>
         <span className="text-sm text-gray-300">{status}</span>
         <div className="flex flex-wrap justify-between items-center w-full">
-          <strong>Watch on: </strong>
-          {externalLinks ? (<div className="flex justify-center">
-            {externalLinks.map((extLink) => (
-              <a href={extLink.url} className="mr-1 last:mr-0">
-                <img
-                  src={extLink.icon}
-                  style={{ height: "16px", width: "16px" }}
-                ></img>
-              </a>
-            ))}
-          </div>): null}
+        {externalLinks.length !== 0 ? (
+          <>
+            <strong>Watch on: </strong>
+            <div className="flex justify-center">
+              {externalLinks.map((extLink) => (
+                <a href={extLink.url} className="mr-1 last:mr-0">
+                  <img
+                    src={extLink.icon}
+                    style={{ height: "16px", width: "16px" }}
+                  ></img>
+                </a>
+              ))}
+            </div>
+          </>): null}
         </div>
       </div>): null}
     </div>
