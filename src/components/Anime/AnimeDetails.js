@@ -22,7 +22,7 @@ function AnimeDetails({
       {episodes ? (<div className="flex flex-wrap justify-between items-center">
         <strong>Episodes: </strong>
         <span className="text-sm text-gray-300">
-          {episodes} episodes
+          {episodes}
         </span>
       </div>): null}
       {countryOfOrigin ? (<div className="flex flex-wrap justify-between items-center">
