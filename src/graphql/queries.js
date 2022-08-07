@@ -6,7 +6,7 @@ export const GET_ANIME_LIST = gql`
             media(
               type: ANIME, 
               status_not_in: NOT_YET_RELEASED, 
-              format_not_in: [SPECIAL, MUSIC],
+              format_not_in: [SPECIAL, MUSIC, TV_SHORT],
               sort: SCORE_DESC
               isAdult: false,
               averageScore_greater: 55
