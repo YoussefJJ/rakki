@@ -5,6 +5,7 @@ import AnimeInfo from './AnimeInfo'
 import AnimePlot from './AnimePlot'
 import AnimeTitle from './AnimeTitle'
 import TrailerModal from '../TrailerModal'
+import { getAnimeCover, getAnimeImage } from '../../utilities/utils'
 
 export const AnimeContent = ({anime}) => {  
 //   if loading {
@@ -13,10 +14,12 @@ export const AnimeContent = ({anime}) => {
 //       )
 //   }
   return (
-    <div className="m-auto shadow-slate-500 bg-slate-600/80 px-3 py-4 sm:w-full">
-      <div className="flex flex-col md:flex-row">
+    <div className="m-auto shadow-slate-500 bg-slate-600/80 px-3 py-4 sm:w-full overflow-hidden">
+      <div className="flex flex-col md:flex-row anime-content">
         <div className="flex flex-col justify-center items-center p-4 md:w-2/5">
-          <img src={anime.coverImage.large} alt="anime" className="rounded" />
+          <div className='relative'>
+            <img src={getAnimeImage(anime)} alt="anime" className="rounded" />
+          </div>
           {/* <h1 className="text-white text-3xl text-center md:text-4xl md:text-left md:hidden font-bold p-3">{anime.title.romaji}</h1> */}
           <AnimeTitle mobileScreen={true}>{anime.title.romaji}</AnimeTitle>
           {anime.title.romaji !== anime.title.english && <AnimeTitle small mobileScreen={true}>{anime.title.english}</AnimeTitle>}
