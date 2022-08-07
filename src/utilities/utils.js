@@ -43,3 +43,11 @@ export const getAnimeCover = (anime) => {
     return null;
   }
 }
+
+export const getAnimeImage = (anime) => {
+  if (anime.coverImage) {
+    return anime.coverImage.extraLarge || anime.coverImage.large || anime.coverImage.medium; 
+  } else {
+    return null;
+  }
+}
