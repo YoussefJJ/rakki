@@ -251,8 +251,8 @@ input:checked + .slider .off
 #button-zone:hover .circle-highlight {
   height: 96px;
   width: 96px;
-  opacity: 0.8;
-  transition: height .5s, width .5s, opacity .5s ease-in;
+  opacity: 0.9;
+  transition: height .3s, width .3s, opacity .3s ease-in;
 }
 
 .related-media-preview-open {
