@@ -6,6 +6,7 @@ import AnimePlot from './AnimePlot'
 import AnimeTitle from './AnimeTitle'
 import TrailerModal from '../TrailerModal'
 import { getAnimeCover, getAnimeImage } from '../../utilities/utils'
+import RelatedMedia from './RelatedMedia'
 
 export const AnimeContent = ({anime}) => {  
 //   if loading {
@@ -17,8 +18,10 @@ export const AnimeContent = ({anime}) => {
     <div className="m-auto shadow-slate-500 bg-slate-600/80 px-3 py-4 sm:w-full overflow-hidden">
       <div className="flex flex-col md:flex-row anime-content">
         <div className="flex flex-col justify-center items-center p-4 md:w-2/5">
-          <div className='relative'>
-            <img src={getAnimeImage(anime)} alt="anime" className="rounded" />
+          <div className='h-4/5'>
+            <img src={getAnimeImage(anime)} alt="anime" style={{
+              height: '500px'
+            }}className="rounded w-full" />
           </div>
           {/* <h1 className="text-white text-3xl text-center md:text-4xl md:text-left md:hidden font-bold p-3">{anime.title.romaji}</h1> */}
           <AnimeTitle mobileScreen={true}>{anime.title.romaji}</AnimeTitle>
@@ -40,9 +43,16 @@ export const AnimeContent = ({anime}) => {
           <div className='flex flex-col justify-between'>
             <AnimePlot plot={anime.description}/>
             <div className="flex flex-col justify-between grow">
-              <AnimeInfo infoTitle={'Genres'} infoContent={anime.genres.map(genre => genre).join(', ')} />
-              <AnimeInfo infoTitle={'Studios'} infoContent={anime.studios.nodes.map(studio => studio.name).join(', ')} />
-              <AnimeInfo infoTitle={'Original Run'} infoContent={`${anime.startDate} - ${anime.endDate}`} />
+              <AnimeInfo infoTitle={'Genres'}>{anime.genres.map(genre => genre).join(', ')}</AnimeInfo>
+              <AnimeInfo infoTitle={'Studios'}>{anime.studios.nodes.map(studio => studio.name).join(', ')}</AnimeInfo>
+              <AnimeInfo infoTitle={'Original Run'}>{anime.originalRun}</AnimeInfo>
+              <AnimeInfo infoTitle={'Related Media'}>
+                <div className='flex flex-wrap gap-x-2'>
+                {anime.relatedMedia.map(node => (
+                <RelatedMedia media={node}></RelatedMedia>
+                ))}
+                </div>
+              </AnimeInfo>
             </div>
           </div>
           <div className='flex justify-center p-5 grow'>

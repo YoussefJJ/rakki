@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { GET_ANIME } from "../../graphql/queries";
 import { useQuery } from "@apollo/client";
 import { AnimeContent } from "./AnimeContent";
-import { capitalizeEachFirstLetter, capitalizeFirstLetter, formatDate, getAnimeCover, getRegionName } from "../../utilities/utils";
+import { capitalizeEachFirstLetter, capitalizeFirstLetter, formatDate, formatStatus, getAnimeCover, getRegionName } from "../../utilities/utils";
 import AnimeBackground from "./AnimeBackground";
 import { useParams } from "react-router-dom";
 
@@ -36,11 +36,14 @@ function AnimeScreen() {
       animeData.startDate.month, 
       animeData.startDate.day
     );
+
     const endDate = formatDate(
       animeData.endDate.year, 
       animeData.endDate.month, 
       animeData.endDate.day
     );
+
+    const originalRun = startDate + ' - ' + endDate 
 
 
     const description = animeData.description?.replace(/\<br\>/g, "\n");
@@ -48,16 +51,19 @@ function AnimeScreen() {
     const externalLinks = animeData.externalLinks?.filter(extLink => extLink.type === "STREAMING")
 
     const regionName = getRegionName(animeData.countryOfOrigin);
-    
+
+    const relatedMedia = animeData.relations?.nodes?.filter(rel => rel.type === "ANIME" || rel.type === "MANGA");
     // const source = capitalizeEachFirstLetter(animeData.source.replace(/_/g, " "));
 
-    const status = capitalizeFirstLetter(animeData.status);
+    const status = formatStatus(animeData.status);
+
+
 
     const recommendations = animeData.recommendations.edges.map(recommendation => 
       recommendation.node.mediaRecommendation
     )
     console.log(recommendations)
-    return { ...animeData, startDate, status, endDate, description, externalLinks, countryOfOrigin: regionName, recommendations };
+    return { ...animeData, relatedMedia, status, originalRun, description, externalLinks, countryOfOrigin: regionName, recommendations };
   }
 
   if (loading) return "Loading...";
