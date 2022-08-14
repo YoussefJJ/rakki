@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { DAILYMOTION_URL, YOUTUBE_URL } from '../utilities/constants'
-import Modal from './Modal/Modal'
 
 const TrailerModal = ({
-    mediaTitle,
     trailer,
     disabled,
     buttonText= 'Watch Trailer',
@@ -11,26 +9,7 @@ const TrailerModal = ({
 }) => {
 
   const [showModal, setShowModal] = useState(false);
-
-  const handleClose = (event) => {
-    if (event.target.id === 'modal')
-      setShowModal(false);
-  }
   return (
-    // <Modal modalTitle={`${mediaTitle} Trailer`} buttonText="Watch Trailer">
-    //     <div className="flex flex-col items-center justify-center">
-    //     <div
-    //       className="flex flex-col w-full justify-center items-center px-1 space-y-3"
-    //       style={{ maxWidth: "100%" }}
-    //     ></div>
-    //         <div className='video-container m-0.5 p-0.5 aspect-video w-full'>
-    //             <iframe className='absolute top-0 left-0 w-full h-full'
-    //             src={`${trailer.site === 'youtube' ? YOUTUBE_URL : DAILYMOTION_URL}${trailer.id}`}>
-    //             </iframe>
-    //         </div>
-    //     </div>
-    // </Modal>
-
       <>
     <button
     disabled={disabled}
@@ -46,7 +25,7 @@ const TrailerModal = ({
         {showModal ? (
           <>
             <div 
-            onClick={handleClose}
+            // onClick={handleClose}
             id="modal"
             style={{
               margin: 0
