@@ -26,6 +26,9 @@ export const Modal = ({modalTitle, children, buttonText, disabled, disableText})
           <div 
           onClick={handleClose}
           id="modal"
+          style={{
+            margin: 0
+          }}
           className="fixed inset-0 bg-gray-700 overflow-y-auto bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
             {/* Content */}
             <div 
