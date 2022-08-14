@@ -29,7 +29,7 @@ export const Modal = ({modalTitle, children, buttonText, disabled, disableText})
           style={{
             margin: 0
           }}
-          className="fixed inset-0 bg-gray-700 overflow-y-auto bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
+          className="fixed z-50 inset-0 bg-gray-700 overflow-y-auto bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
             {/* Content */}
             <div 
             className="bg-white rounded max-w-full md:w-4/5 space-y-3 flex flex-col"
