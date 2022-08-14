@@ -7,16 +7,26 @@ export function capitalizeEachFirstLetter(string) {
 }
 
 export function formatDate(year, month, day) {
-    const date = new Date(
-        year,
-        month,
-        day
-      ).toLocaleDateString("en-EN", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-    });
-    return date;
+  let options = { year: 'numeric', month: 'long', day: 'numeric' };
+  if (!year) {
+    delete options.year;
+  }
+  if (!month) {
+    delete options.month;
+  }
+  if (!day) {
+    delete options.day;
+  }
+  console.log(options)
+  if (Object.keys(options).length === 0)
+    return 'Unknown';
+  
+  const date = new Date(
+      year,
+      month - 1,
+      day
+    ).toLocaleDateString("en-EN", options);
+  return date;
 }
 
 export function getRegionName(region) {
@@ -49,5 +59,26 @@ export const getAnimeImage = (anime) => {
     return anime.coverImage.extraLarge || anime.coverImage.large || anime.coverImage.medium; 
   } else {
     return null;
+  }
+}
+
+export const getFirstNWords = (n, paragraph) => {
+  const words = paragraph.split(' ');
+  const firstNWords = words.slice(0, n);
+  return firstNWords.join(' ');
+} 
+
+export const formatStatus = (status) => {
+  switch (status) {
+    case 'RELEASING':
+      return 'Releasing';
+    case 'FINISHED':
+      return 'Finished';
+    case 'NOT_YET_RELEASED':
+      return 'Not yet released';
+    case 'CANCELLED':
+      return 'Cancelled';
+    default:
+      return 'Unknown';
   }
 }
