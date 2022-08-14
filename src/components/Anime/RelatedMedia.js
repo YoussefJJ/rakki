@@ -7,25 +7,10 @@ const RelatedMedia = ({media}) => {
   const showMedia = (event) => {
     setShow(true)
   }
-
-  const shownStyle = {
-    display: 'block',
-    opacity: 1,
-    transition: 'opacity 0.5s ease-in-out',
-    zIndex: 50,
-    left: 0,
-    bottom: '100%'
-  }
-
-  const hiddenStyle = {
-    display: 'none',
-    opacity: 0,
-    zIndex: 50,
-    left: 0,
-    bottom: '100%'
-  }
+  
   return (
-    <Link to={`/anime/${media.id}`}
+    <Link 
+    to={`/anime/${media.id}`}
     onMouseEnter={showMedia}
     onMouseLeave={() => setShow(false)}
     href='#' className='relative text-md hover:underline'>
