@@ -60,7 +60,7 @@ export const GET_RECOMMENDATIONS = gql`
 
 export const GET_ANIME = gql`
     query GetAnime($id: Int!) {
-        Media(id: $id) {
+        Media(id: $id, type: ANIME) {
             id
             title {
                 romaji
@@ -69,7 +69,9 @@ export const GET_ANIME = gql`
             }
             description
             coverImage {
+                extraLarge
                 large
+                medium
             }
             episodes
             format
@@ -78,6 +80,22 @@ export const GET_ANIME = gql`
             averageScore
             genres
             siteUrl
+            relations {
+              nodes {
+                id
+                type
+                chapters
+                episodes
+                title {
+                  romaji
+                  english
+                }
+                coverImage {
+                  medium
+                }
+                description
+              }
+            }
             trailer {
                 id
                 site
