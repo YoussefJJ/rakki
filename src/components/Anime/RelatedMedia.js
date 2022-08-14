@@ -7,7 +7,7 @@ const RelatedMedia = ({media}) => {
   const showMedia = (event) => {
     setShow(true)
   }
-  
+
   return (
     <Link 
     to={`/anime/${media.id}`}
@@ -44,7 +44,7 @@ const RelatedMedia = ({media}) => {
                         width: '120px'
                     }}/>
                     <div className='p-0.5 text-sm flex flex-col border-b-2 border-b-white'>
-                        <p className='overflow-y-auto'>{media.description ? media.description : 'No description for this media.'}</p>
+                        <p className='overflow-y-auto break-words'>{media.description ? media.description.replace(/(<([^>]+)>)/ig, '') : 'No description for this media.'}</p>
                     </div>
 
                 </div>
