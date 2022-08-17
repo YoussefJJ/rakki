@@ -7,10 +7,10 @@ const RecTitle = ({
   return (
     <div className='recommendation-title'>
         <h2 
-        className="text-3xl text-gray-50 font-bold">
+        className="text-3xl text-brightGreen font-bold">
         {romajiTitle}
         </h2>
-        <h4 className='text-md text-gray-200 font-medium'>{englishTitle}</h4>
+        <h4 className='text-md text-brightGreen font-medium'>{englishTitle}</h4>
     </div>
   )
 }
