@@ -23,8 +23,13 @@ module.exports = {
         'greenRecShadow-sm': '-4px -4px 2px 1px rgb(139,212,80), -4px -4px 0px 3px black',
         'greenRecShadow-md': '-7px -7px 2px 1px rgb(139,212,80), -7px -7px 0px 3px black',
         'greenRecShadow-lg': '12px 12px 2px 1px rgb(139,212,80), 12px 12px 0px 3px black',
-      }
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwind-scrollbar")
+  ],
+  variants: {
+    scrollbar: ['rounded']
+  }
 }

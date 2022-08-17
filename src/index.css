@@ -27,25 +27,25 @@ code {
 
 @layer utilities {
 
-  .scrollbar {
+  .scroll-bar {
     scrollbar-width: thin;
     scrollbar-color: #000 #fff;
   }
   
   
   /* For Chrome, EDGE, Opera, Others */
-  .scrollbar::-webkit-scrollbar {
+  .scroll-bar::-webkit-scrollbar {
     width: 5px;
   }
   
-  .scrollbar::-webkit-scrollbar-track {
+  .scroll-bar::-webkit-scrollbar-track {
     border-radius: 6px; 
-    background: transparent;
+    /* background: transparent; */
   }
   
-  .scrollbar::-webkit-scrollbar-thumb { 
+  .scroll-bar::-webkit-scrollbar-thumb { 
     border-radius: 6px;
-    background:#8e939c;
+    /* background:#8e939c; */
   }
 }
 
