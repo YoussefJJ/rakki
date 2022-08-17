@@ -189,7 +189,7 @@ input:checked + .slider .off
   left: 0;
   transform: translateY(100%);
   opacity: 0;
-  border-top-right-radius: 1rem;
+  /* border-top-right-radius: 1rem; */
   transition: transform .5s ease, opacity .5s ease;
 }
 
@@ -278,6 +278,33 @@ input:checked + .slider .off
   position: absolute;
   top: 100%;
   z-index: 50;
+} */
+
+.modal-button {
+  display: inline-block;
+  transition: transform .3s ease-out, background-color .3s ease-out;
+  box-shadow: 
+  0.3em 0.3em 0 0 transparent, 0.3em 0.3em 0 2px transparent
+}
+
+.modal-button:hover:enabled {
+  transform: translate(-7px, -7px);
+  /* box-shadow:    
+  0.3em 0.3em 0 0 rgb(139,212,80), 0.3em 0.3em 0 2px black; */
+}
+
+/* .plot-container {
+  position: relative;
+}
+.plot-container::after{
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-color: rgba(255, 1, 1, 0.5);
+  z-index: -1;
 } */
 
 @keyframes slideDown {
