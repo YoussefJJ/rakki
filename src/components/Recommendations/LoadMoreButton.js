@@ -10,8 +10,8 @@ const LoadMoreButton = ({
     <button 
         className="w-full
         flex justify-center items-center
-        p-5 text-white text-center bg-slate-600 font-bold
-        text-2xl hover:bg-slate-500 shadow-md"
+        p-5 text-darkPurple text-center bg-brightGreen font-bold
+        text-2xl hover:bg-brightPurple hover:text-brightGreen transition-all duration-150 ease-in shadow-md"
         onClick={onClick}>
         {loading ? (<Spinner/>): buttonText}
     </button>

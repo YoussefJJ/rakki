@@ -11,17 +11,20 @@ const TrailerModal = ({
   const [showModal, setShowModal] = useState(false);
   return (
       <>
-    <button
-    disabled={disabled}
-    className='bg-blue-800 text-white active:bg-blue-900 font-bold uppercase text-md px-6 py-3 rounded-md shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150'
-    style={{
-      opacity: disabled ? '0.3' : '1',
-    }}
-    type="button"
-    onClick={() => setShowModal(true)}
-  >
-    {disabled && disableText ? disableText : buttonText}
-  </button>
+      <div className='relative z-30'>
+        <button
+        disabled={disabled}
+        className='z-20 text-white modal-button font-bold uppercase text-md px-6 py-3 bg-veryDarkPurple border-2 border-black hover:bg-darkPurple outline-none focus:outline-none ease-linear transition-all duration-150'
+        style={{
+          opacity: disabled ? '0.3' : '1',
+        }}
+        type="button"
+        onClick={() => setShowModal(true)}
+      >
+        {disabled && disableText ? disableText : buttonText}
+      </button>
+      <div className="absolute h-full w-full bg-brightGreen top-0 -z-10 border-2 border-black box-border"></div>
+      </div>
         {showModal ? (
           <>
             <div 
@@ -33,7 +36,7 @@ const TrailerModal = ({
             className="fixed z-50 inset-0 bg-gray-700 overflow-y-auto bg-opacity-30 backdrop-blur-sm">
                  <div 
                  id="button-zone"
-                 className='fixed right-0 p-2 flex justify-items-center items-center'>
+                 className='fixed right-0 p-2 flex justify-items-center items-center group'>
                   <button className="h-6 w-6 cursor-pointer relative " onClick={() => setShowModal(false)}>
                       <div className='relative'>
                         <span className="close-button" style={{

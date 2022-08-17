@@ -72,7 +72,7 @@ function AnimeScreen() {
   return (
     <>
       <AnimeBackground imageUrl={bgImage}/>
-      <div className="flex h-screen">
+      <div className="flex md:h-screen">
         <AnimeContent anime={anime} />
       </div>
     </>

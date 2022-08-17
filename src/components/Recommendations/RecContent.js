@@ -7,8 +7,10 @@ const RecContent = ({
   return (
     <div 
     onClick={onClick}
-    className="w-full inline-block object-cover p-1 recommendation-container cursor-pointer">
-        <div className="w-full inline-block rounded bg-gray-700 p-0.5 relative">
+    className="inline-block object-cover p-1 recommendation-container cursor-pointer" style={{
+      width: '95%'
+    }}>
+        <div className="w-full inline-block border-2 border-brightGreen bg-gray-700 p-0.5 relative">
             <div className='overflow-hidden relative'>
                 {children}
             </div>

@@ -3,10 +3,10 @@ import React from 'react'
 function AnimeInfo({infoTitle, children}) {
   return (
     <>
-    <strong className='text-gray-400'>
+    <strong className='text-brightPurple'>
         {infoTitle}:
     </strong>
-    <span className="text-md text-gray-300">{children}</span>
+    <span className="text-sm text-gray-300">{children}</span>
     </>
   )
 }

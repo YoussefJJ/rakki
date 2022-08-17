@@ -2,6 +2,8 @@ import { useLazyQuery, useQuery } from "@apollo/client";
 import React, { useState, useEffect } from "react";
 import { GET_RECOMMENDATIONS } from "../graphql/queries";
 import Modal from "./Modal/Modal";
+import ModalBody from "./Modal/ModalBody";
+import ModalFooter from "./Modal/ModalFooter";
 import LoadMoreButton from "./Recommendations/LoadMoreButton";
 import Recommendation from "./Recommendations/Recommendation";
 
@@ -74,21 +76,25 @@ export const RecommendationsModal = ({ from }) => {
     buttonText="Show Recommendations"
     disableText="No recommendations found" 
     disabled={recommendations.length === 0}>
-      <div className="flex flex-col items-center justify-center">
-        <div
-          className="flex flex-col w-full justify-center items-center px-1 space-y-3"
-          style={{ maxWidth: "100%" }}
-        >
-          {recommendations.map((recommendation) => {
-            return (
-              <Recommendation key={recommendation.id} data={recommendation}/>
-            );
-          })}
+      <ModalBody>
+        <div className="flex flex-col items-center justify-center">
+          <div
+            className="flex flex-col w-full justify-center items-center px-1 space-y-3"
+            style={{ maxWidth: "100%" }}
+          >
+            {recommendations.map((recommendation) => {
+              return (
+                <Recommendation key={recommendation.id} data={recommendation}/>
+              );
+            })}
+          </div>
+          {/* <div className="w-full">
+          </div> */}
         </div>
-        <div className="w-full">
-          <LoadMoreButton buttonText="See more" onClick={handleLoadMore} loading={buttonClickLoading}/>
-        </div>
-      </div>
+      </ModalBody>
+      <ModalFooter>
+        <LoadMoreButton buttonText="See more" onClick={handleLoadMore} loading={buttonClickLoading}/>
+      </ModalFooter>
     </Modal>
   );
 };
