@@ -53,7 +53,7 @@ export const AnimeContent = ({anime}) => {
             <AnimePlot plot={anime.description}/>
             <div className="flex flex-col">
               <AnimeInfo infoTitle={'Genres'}>{anime.genres.map(genre => genre).join(', ')}</AnimeInfo>
-              <AnimeInfo infoTitle={'Studios'}>{anime.studios.nodes.map(studio => studio.name).join(', ')}</AnimeInfo>
+              <AnimeInfo infoTitle={'Studios'}>{anime.studios.edges.filter(studio => studio.node.isAnimationStudio === true).map(studio => studio.node.name).join(', ')}</AnimeInfo>
               <AnimeInfo infoTitle={'Original Run'}>{anime.originalRun}</AnimeInfo>
               {/* <AnimeInfo infoTitle={'Related Media'}>
                 <div className='flex flex-wrap gap-x-2'>

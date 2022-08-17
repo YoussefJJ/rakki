@@ -111,9 +111,12 @@ export const GET_ANIME = gql`
                 month
                 day
             }
-            studios(isMain: true) {
-                nodes {
+            studios {
+                edges {
+                  node {
+                    isAnimationStudio
                     name
+                  }
                 }
             }
             source
