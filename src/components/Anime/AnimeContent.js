@@ -28,7 +28,7 @@ export const AnimeContent = ({anime}) => {
             <img src={getAnimeImage(anime)} alt="anime" style={{
               height: '100%'
             }}
-            className="w-full border-4 border-veryDarkPurple shadow-greenRecShadow" />
+            className="w-full border-2 border-brightGreen shadow-greenRecShadow" />
           </div>
           {/* <h1 className="text-white text-3xl text-center md:text-4xl md:text-left md:hidden font-bold p-3">{anime.title.romaji}</h1> */}
           <div>
