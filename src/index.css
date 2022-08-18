@@ -283,8 +283,12 @@ input:checked + .slider .off
 .modal-button {
   display: inline-block;
   transition: transform .3s ease-out, background-color .3s ease-out;
-  box-shadow: 
-  0.3em 0.3em 0 0 transparent, 0.3em 0.3em 0 2px transparent
+  /* box-shadow: 
+  0.3em 0.3em 0 0 transparent, 0.3em 0.3em 0 2px transparent */
+}
+
+#modal-content {
+  animation: zoomIn .3s ease-in;
 }
 
 .modal-button:hover:enabled {
@@ -340,5 +344,14 @@ input:checked + .slider .off
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
   }
 }
