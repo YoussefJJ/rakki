@@ -13,7 +13,7 @@ export const Modal = ({modalTitle, children, buttonText, disabled, disableText})
       <button
         disabled={disabled}
         id="modal-button"
-        className='z-20 bg-veryDarkPurple text-white active:bg-veryDarkPurple font-bold uppercase text-md px-6 py-3 border-2 border-black modal-button hover:bg-darkPurple outline-none focus:outline-none ease-linear transition-all duration-150'
+        className='z-20 bg-veryDarkPurple text-white 2xl:text-xl active:bg-veryDarkPurple font-bold uppercase text-md px-6 py-3 border-2 border-black modal-button hover:bg-darkPurple outline-none focus:outline-none ease-linear transition-all duration-150'
         style={{
           opacity: disabled ? '0.3' : '1',
         }}
@@ -35,7 +35,8 @@ export const Modal = ({modalTitle, children, buttonText, disabled, disableText})
           className="fixed z-50 inset-0 bg-gray-700 overflow-y-auto bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
             {/* Content */}
             <div 
-            className="bg-veryDarkPurple border-black max-w-full md:w-4/5 space-y-3 flex flex-col"
+            id="modal-content"
+            className="bg-veryDarkPurple border-black border-2 drop-shadow-2xl max-w-full md:w-4/5 space-y-3 flex flex-col"
             style={{maxHeight: '90%'}}>
               {/* Header */}
               <div className="flex flex-row justify-between items-center p-2">
