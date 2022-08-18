@@ -82,3 +82,7 @@ export const formatStatus = (status) => {
       return 'Unknown';
   }
 }
+
+export const removeTags = (str) => {
+  return str.replace(/(<([^>]+)>)/ig, '')
+}
