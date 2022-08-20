@@ -198,11 +198,32 @@ input:checked + .slider .off
   opacity: 0.9;
 }
 
+.recomm-content {
+  animation: fadeInUp .3s;
+}
+
 .video-container {
   height: 60%;
   width: 80%;
   position: relative;
   padding-bottom: 56.25%;
+}
+
+.anime-background {
+  opacity: 1;
+  transition: opacity .5s ease;
+}
+
+/* .anime-plot .scroll-bar {
+  overflow: hidden;
+}
+
+.anime-plot:hover .scroll-bar {
+  overflow: auto;
+} */
+
+.anime-background-loading {
+  opacity: 0;
 }
 
 .anime-img {
@@ -344,6 +365,17 @@ input:checked + .slider .off
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
