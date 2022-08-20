@@ -7,6 +7,7 @@ import AnimeTitle from './AnimeTitle'
 import TrailerModal from '../TrailerModal'
 import { getAnimeCover, getAnimeImage } from '../../utilities/utils'
 import RelatedMedia from './RelatedMedia'
+import AnimeCover from './AnimeCover'
 
 export const AnimeContent = ({anime}) => {  
 //   if loading {
@@ -24,12 +25,7 @@ export const AnimeContent = ({anime}) => {
         height: "100%"
       }}>
         <div className="flex flex-col justify-center items-center p-4 md:w-2/5 flex-1 h-full">
-          <div className='md:h-4/6'>
-            <img src={getAnimeImage(anime)} alt="anime" style={{
-              height: '100%'
-            }}
-            className="w-full border-2 border-brightGreen shadow-greenRecShadow" />
-          </div>
+          <AnimeCover anime={anime} />
           {/* <h1 className="text-white text-3xl text-center md:text-4xl md:text-left md:hidden font-bold p-3">{anime.title.romaji}</h1> */}
           <div>
             <AnimeTitle mobileScreen={true}>{anime.title.romaji}</AnimeTitle>
