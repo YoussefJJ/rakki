@@ -14,7 +14,7 @@ const TrailerModal = ({
       <div className='relative z-30 h-full'>
         <button
         disabled={disabled}
-        className='w-full z-20 bg-veryDarkPurple text-white 2xl:text-xl active:bg-veryDarkPurple font-bold uppercase text-base px-4 py-2 border-2 border-black modal-button hover:bg-darkPurple outline-none focus:outline-none ease-linear transition-all duration-150'
+        className='w-full z-20 text-sm bg-veryDarkPurple text-white 2xl:text-xl active:bg-veryDarkPurple font-bold uppercase px-4 py-2 border-2 border-black modal-button hover:bg-darkPurple outline-none focus:outline-none ease-linear transition-all duration-150'
         style={{
           opacity: disabled ? '0.3' : '1',
         }}

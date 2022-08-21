@@ -13,7 +13,7 @@ export const Modal = ({modalTitle, children, buttonText, disabled, disableText})
       <button
         disabled={disabled}
         id="modal-button"
-        className='z-20 bg-veryDarkPurple text-white 2xl:text-xl active:bg-veryDarkPurple font-bold uppercase text-md px-4 py-2 border-2 border-black modal-button hover:enabled:bg-darkPurple outline-none focus:outline-none ease-linear transition-all duration-150'
+        className='z-20 max-w-full text-sm bg-veryDarkPurple text-white 2xl:text-xl active:bg-veryDarkPurple font-bold uppercase text-md px-4 py-2 border-2 border-black modal-button hover:enabled:bg-darkPurple outline-none focus:outline-none ease-linear transition-all duration-150'
         style={{
           opacity: disabled ? '0.3' : '1',
         }}
