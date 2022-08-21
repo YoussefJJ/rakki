@@ -6,7 +6,7 @@ function AnimeTitle({small = false, mobileScreen = false, children}) {
   return (
     <div className="max-h-14">
       {!small && <h1 title={children} className="hidden text-brightGreen text-md text-center md:text-lg md:text-left font-bold 2xl:text-2xl md:line-clamp-2">{children}</h1>}
-      {small && <p className="hidden text-darkGreen text-base md:leading-5 text-center md:text-base md:text-left font-medium 2xl:text-2xl md:line-clamp-2">{children}</p>}
+      {small && <h1 title={children} className="hidden text-darkGreen text-base md:leading-5 text-center md:text-base md:text-left font-medium 2xl:text-2xl md:line-clamp-2">{children}</h1>}
     </div>
   );
   else 
