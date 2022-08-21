@@ -9,11 +9,11 @@ export const Modal = ({modalTitle, children, buttonText, disabled, disableText})
   }
 
   return (
-    <><div className="relative z-30">
+    <><div className="relative z-30 h-full">
       <button
         disabled={disabled}
         id="modal-button"
-        className='z-20 bg-veryDarkPurple text-white 2xl:text-xl active:bg-veryDarkPurple font-bold uppercase text-md px-6 py-3 border-2 border-black modal-button hover:bg-darkPurple outline-none focus:outline-none ease-linear transition-all duration-150'
+        className='z-20 bg-veryDarkPurple text-white 2xl:text-xl active:bg-veryDarkPurple font-bold uppercase text-md px-4 py-2 border-2 border-black modal-button hover:enabled:bg-darkPurple outline-none focus:outline-none ease-linear transition-all duration-150'
         style={{
           opacity: disabled ? '0.3' : '1',
         }}
@@ -22,7 +22,7 @@ export const Modal = ({modalTitle, children, buttonText, disabled, disableText})
       >
         {disabled && disableText ? disableText : buttonText}
       </button>
-      <div className="absolute h-full w-full bg-brightGreen top-0 -z-10 border-2 border-black box-border"></div>
+      <div className={`absolute h-full w-full ${!disabled ? 'bg-brightGreen': 'bg-veryDarkPurple'} top-0 -z-10 border-2 border-black box-border`}></div>
       </div>
       {showModal ? (
         <>
@@ -32,7 +32,7 @@ export const Modal = ({modalTitle, children, buttonText, disabled, disableText})
           style={{
             margin: 0
           }}
-          className="fixed z-50 inset-0 bg-gray-700 overflow-y-auto bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
+          className="fixed z-50 inset-0 bg-gray-700 overflow-hidden bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
             {/* Content */}
             <div 
             id="modal-content"

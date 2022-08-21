@@ -83,6 +83,33 @@ export const formatStatus = (status) => {
   }
 }
 
+export const getFormat = (format) => {
+  switch (format) {
+    case 'TV':
+      return 'TV';
+    case 'OVA':
+      return 'OVA';
+    case 'MOVIE':
+      return 'Movie';
+    case 'SPECIAL':
+      return 'Special';
+    case 'ONA':
+      return 'ONA';
+    case 'MUSIC':
+      return 'Music';
+    case 'MANGA':
+      return 'Manga';
+    case 'NOVEL':
+      return 'Novel';
+    case 'ONE_SHOT':
+      return 'One-shot';
+    case 'TV_SHORT':
+      return 'TV Short';
+    default:
+      return 'Unknown';
+  }
+}
+
 export const removeTags = (str) => {
   return str.replace(/(<([^>]+)>)/ig, '')
 }

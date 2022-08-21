@@ -84,7 +84,7 @@ export const RecommendationsModal = ({ from }) => {
           >
             {recommendations.map((recommendation) => {
               return (
-                <Recommendation key={recommendation.id} data={recommendation}/>
+                (recommendation && <Recommendation key={recommendation.id} data={recommendation}/>)
               );
             })}
           </div>

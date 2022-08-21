@@ -309,7 +309,7 @@ input:checked + .slider .off
 }
 
 #modal-content {
-  animation: zoomIn .3s ease-in;
+  animation: fadeInUp .5s ease-in-out;
 }
 
 .modal-button:hover:enabled {
@@ -331,6 +331,54 @@ input:checked + .slider .off
   background-color: rgba(255, 1, 1, 0.5);
   z-index: -1;
 } */
+
+/* .related-media-closed .related-media-content{
+  height: 0px;
+  overflow: hidden;
+  width: 100%;
+} */
+
+.anime-tab-btn {
+  transition: transform .3s ease-in;
+}
+
+.btn-highlight {
+  height: 2px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(100%);
+  position: absolute;
+  bottom: 0;
+  transition: transform .3s ease-in, opacity .3s ease-in;
+}
+
+.anime-tab-btn:hover + .btn-highlight {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.anime-tab-btn:active + .btn-highlight {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @keyframes slideDown {
   0% {
@@ -376,6 +424,17 @@ input:checked + .slider .off
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
   }
 }
 
