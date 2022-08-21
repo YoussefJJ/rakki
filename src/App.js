@@ -6,6 +6,7 @@ import { Context } from './contexts/store.context';
 import RandomAnime from './components/RandomMedia/RandomAnime';
 import { useContext } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './components/pages/Layout';
 
 function App() {
   const {animeList, setAnimeList} = useContext(Context)
@@ -13,8 +14,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<RandomMedia/>}/>
-        <Route path="/anime/:id" element={<AnimeScreen/>}/>
+        <Route path='/' element={<Layout/>}>
+          <Route path='/' element={<RandomMedia/>}/>
+          <Route path="/anime/:id" element={<AnimeScreen/>}/>
+        </Route>
       </Routes>
     </BrowserRouter>
   );
