@@ -362,7 +362,97 @@ input:checked + .slider .off
   opacity: 1;
 }
 
+.hamburger {
+  position: relative;
+  cursor: pointer;
+  z-index: 9999;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+}
 
+.hamburger-top, .hamburger-middle, .hamburger-bottom {
+  height: 2px;
+  width: 24px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 150;
+  overflow: hidden;
+  transform: translateY(-100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.menu-open {
+  transform: translateY(0);
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  font-weight: 700;
+  position: relative;
+  transform: translateX(0px);
+  transition: all 0.3s ease-in;
+}
+
+.hover-underline-animation:hover {
+  display: inline-block;
+  position: relative;
+  transform: translateX(10px);
+  transition: all 0.3s ease-in;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 4px;
+  bottom: -4px;
+  left: 0;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
 
 
 
