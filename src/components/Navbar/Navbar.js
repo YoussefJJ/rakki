@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from '../../assets/img/rakki-logo-green.svg'
-import SvgComponent from './Logo'
+import Menu from './Menu'
 
 const Navbar = () => {
   return (
@@ -15,16 +15,16 @@ const Navbar = () => {
                     height: '100px',
                     width: '200px',
                     }}/>
-                    <div id="links">
-                        <a className='p-2 text-brightPurple text-left text-lg' href='#'>Random</a>
-                        <a className='p-2 text-brightPurple text-left text-lg' href='#'>Random</a>
-                        <a className='p-2 text-brightPurple text-left text-lg' href='#'>Random</a>
-                    </div>
                 </div>
             </div>
-            <div id="search">
-                <span className='bg-brightGreen p-2 text-base'>Search</span>
-            </div>
+            {/* <div id="menu" className='p-3'>
+                <button className='hamburger'>
+                    <span className='hamburger-top bg-brightGreen'></span>
+                    <span className='hamburger-middle bg-brightGreen'></span>
+                    <span className='hamburger-bottom bg-brightGreen'></span>
+                </button>
+            </div> */}
+            <Menu/>
         </div>
     </nav>
   )
