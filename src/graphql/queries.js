@@ -153,3 +153,20 @@ export const GET_ANIME = gql`
         }
     }
 `;
+
+
+
+export const GET_COVERS = gql`
+  query getCovers($page: Int) {
+  mangaPage: Page(page: $page, perPage: 50) {
+    media(sort: POPULARITY_DESC, type: MANGA) {
+      bannerImage
+    }
+  }
+  animePage: Page(page: $page, perPage: 50) {
+    media(sort: POPULARITY_DESC, type: ANIME) {
+      bannerImage
+    }
+  }
+}
+`;
