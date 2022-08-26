@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Logo from '../../assets/img/rakki-logo-purple.svg'
 import { useQuery } from '@apollo/client/react'
 import { GET_COVERS } from '../../graphql/queries'
@@ -10,6 +10,7 @@ const Menu = () => {
   const [covers, setCovers] = useState([])
   const [skip, setSkip] = useState(false)
   const [coverImage, setCoverImage] = useState(null)
+  const [coverImgNumber, setCoverImgNumber] = useState(0)
 
   const { data, loading, error } = useQuery(GET_COVERS, {
     variables: {
@@ -32,6 +33,14 @@ const Menu = () => {
         setSkip(true)
     }
   })
+
+  useEffect(() => {
+    if (covers.anime){
+        const number = getRandomInt(0, covers.anime.length - 1)
+        setCoverImgNumber(number)
+        setCoverImage(covers.anime[number])
+    }
+  }, [open])
   return (
     <div id="menu" className='p-3'>
     <button className={`hamburger ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
@@ -49,7 +58,7 @@ const Menu = () => {
             <div id="links" className='pl-7 flex flex-col space-y-3 text-6xl text-darkPurple'>
                 <div>
                     <a 
-                    onMouseEnter={() => setCoverImage(covers.anime[0])}
+                    onMouseEnter={() => setCoverImage(covers.anime[coverImgNumber])}
                     href='#' 
                     className='hover-underline-animation hover:text-white after:bg-white'>
                         RANDOM ANIME
@@ -57,7 +66,7 @@ const Menu = () => {
                 </div>
                 <div>
                     <a href='#'
-                    onMouseEnter={() => setCoverImage(covers.manga[0])}
+                    onMouseEnter={() => setCoverImage(covers.manga[coverImgNumber])}
                     className='hover-underline-animation hover:text-white after:bg-white'
                     >
                         RANDOM MANGA
@@ -72,6 +81,7 @@ const Menu = () => {
             zIndex: '-1',
             backgroundImage: `${coverImage ? `url('${coverImage}')` : ''}`,
             backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
             filter: 'blur(5px) brightness(0.3)',
         }}></div>
     </div>
