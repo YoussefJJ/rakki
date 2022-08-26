@@ -455,7 +455,7 @@ input:checked + .slider .off
 }
 
 .menu-bg-image {
-  transition: background-image .3s ease-in-out;
+  transition: all .3s ease-in-out;
   /* animation: fadeIn .5s ease-in-out; */
 }
 

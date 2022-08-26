@@ -35,7 +35,7 @@ const Menu = () => {
   })
 
   useEffect(() => {
-    if (covers.anime){
+    if (covers.anime && open){
         const number = getRandomInt(0, covers.anime.length - 1)
         setCoverImgNumber(number)
         setCoverImage(covers.anime[number])
@@ -50,7 +50,7 @@ const Menu = () => {
     </button>
     {/* Full screen menu */}
     <div className={`menu bg-veryDarkPurple ${open ? 'menu-open' : ''}`}>
-        <div className='w-4/5 h-full mx-auto flex flex-col justify-start space-y-10 z-10'>
+        <div className='w-4/5 h-full mr-auto flex flex-col justify-start space-y-10 z-10'>
             <img src={Logo} style={{
                 height: '200px',
                 width: '300px',
@@ -74,7 +74,7 @@ const Menu = () => {
                 </div>
             </div>
         </div>
-        <div className='bg-brightGreen/90 w-full h-full absolute -left-1/4 top-1/2' style={{
+        <div className={`bg-brightGreen/90 w-full h-full absolute -left-1/3 top-1/2`} style={{
             transform: 'rotate(45deg) scale(1.8)',
         }}></div>
         <div className='w-full h-full absolute menu-bg-image' style={{
