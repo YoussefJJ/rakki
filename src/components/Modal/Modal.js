@@ -30,9 +30,10 @@ export const Modal = ({modalTitle, children, buttonText, disabled, disableText})
           onClick={handleClose}
           id="modal"
           style={{
+            zIndex: '9999',
             margin: 0
           }}
-          className="fixed z-50 inset-0 bg-gray-700 overflow-hidden bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
+          className="fixed inset-0 bg-gray-700 overflow-hidden bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
             {/* Content */}
             <div 
             id="modal-content"

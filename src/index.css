@@ -365,7 +365,7 @@ input:checked + .slider .off
 .hamburger {
   position: relative;
   cursor: pointer;
-  z-index: 9999;
+  z-index: 1000;
   width: 24px;
   height: 24px;
   transition: all 0.25s;
@@ -454,10 +454,22 @@ input:checked + .slider .off
   transform-origin: bottom left;
 }
 
+.menu-bg-image {
+  transition: background-image .3s ease-in-out;
+  /* animation: fadeIn .5s ease-in-out; */
+}
 
 
 
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 
 

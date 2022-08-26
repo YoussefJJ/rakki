@@ -31,6 +31,7 @@ const TrailerModal = ({
             // onClick={handleClose}
             id="modal"
             style={{
+              zIndex: '9999', 
               margin: 0
             }}
             className="fixed z-50 inset-0 bg-gray-700 overflow-y-auto bg-opacity-30 backdrop-blur-sm">
