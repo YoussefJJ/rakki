@@ -40,7 +40,7 @@ const Menu = () => {
         setCoverImgNumber(number)
         setCoverImage(covers.anime[number])
     }
-  }, [open])
+  }, [open, covers])
   return (
     <div id="menu" className='p-3'>
     <button className={`hamburger ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
@@ -51,11 +51,11 @@ const Menu = () => {
     {/* Full screen menu */}
     <div className={`menu bg-veryDarkPurple ${open ? 'menu-open' : ''}`}>
         <div className='w-4/5 h-full mr-auto flex flex-col justify-start space-y-10 z-10'>
-            <img src={Logo} style={{
+            <img src={Logo} alt="RAKKI" style={{
                 height: '200px',
                 width: '300px',
             }}></img>
-            <div id="links" className='pl-7 flex flex-col space-y-3 text-6xl text-darkPurple'>
+            <div id="links" className='pl-7 flex font-osaka flex-col space-y-3 text-6xl text-darkPurple'>
                 <div>
                     <a 
                     onMouseEnter={() => setCoverImage(covers.anime[coverImgNumber])}
