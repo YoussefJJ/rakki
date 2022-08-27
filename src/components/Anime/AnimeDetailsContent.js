@@ -4,6 +4,8 @@ import { getFormat } from '../../utilities/utils'
 const AnimeDetailsContent = ({
     className,
     format,
+    volumes,
+    chapters,
     duration,
     episodes,
     countryOfOrigin,
@@ -32,6 +34,18 @@ const AnimeDetailsContent = ({
         <strong>Country of Origin: </strong>
         <span className="text-md text-gray-300">
           {countryOfOrigin}
+        </span>
+      </div>): null}
+      {volumes ? (<div className="flex flex-wrap justify-between items-center">
+        <strong>Volumes: </strong>
+        <span className="text-md text-gray-300">
+          {volumes}
+        </span>
+      </div>): null}
+      {chapters ? (<div className="flex flex-wrap justify-between items-center">
+        <strong>Chapters: </strong>
+        <span className="text-md text-gray-300">
+          {chapters}
         </span>
       </div>): null}
       {status ? (<div className="flex flex-wrap justify-between items-center">
