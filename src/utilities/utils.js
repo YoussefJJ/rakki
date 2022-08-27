@@ -19,7 +19,7 @@ export function formatDate(year, month, day) {
   }
   console.log(options)
   if (Object.keys(options).length === 0)
-    return 'Unknown';
+    return null;
   
   const date = new Date(
       year,
