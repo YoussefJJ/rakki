@@ -15,7 +15,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Layout/>}>
-          <Route path='/' element={<RandomMedia/>}/>
+          <Route exact path="/" element={<RandomMedia type="ANIME"/>} />
+          <Route path='/anime' element={<RandomMedia type="ANIME"/>}/>
           <Route path="/anime/:id" element={<AnimeScreen/>}/>
         </Route>
       </Routes>

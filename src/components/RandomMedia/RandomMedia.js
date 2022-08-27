@@ -1,10 +1,10 @@
 import { useQuery } from '@apollo/client';
 import React, { useEffect, useState } from 'react'
 import { Link, Outlet, Route, Routes, useNavigate } from 'react-router-dom';
-import { GET_ANIME_LIST } from '../../graphql/queries';
+import { GET_MEDIA_LIST } from '../../graphql/queries';
 import { getRandomInt } from '../../utilities/utils'
 
-const RandomMedia = () => {
+const RandomMedia = ({ type }) => {
   const navigate = useNavigate()
   const [randomPage, setRandomPage] = useState(1);
   const [animeNumber, setAnimeNumber] = useState(1);
@@ -21,10 +21,11 @@ const RandomMedia = () => {
       }
     getRandomMedia()
   }, [])
-
-  const {data, loading, error} = useQuery(GET_ANIME_LIST, {
+  
+  const {data, loading, error} = useQuery(GET_MEDIA_LIST, {
     variables: {
         page: randomPage,
+        type: type
     },
     onCompleted: (data) => {
         console.log(data)
