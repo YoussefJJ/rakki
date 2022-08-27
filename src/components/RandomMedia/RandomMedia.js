@@ -7,8 +7,6 @@ import { getRandomInt } from '../../utilities/utils'
 const RandomMedia = ({ type }) => {
   const navigate = useNavigate()
   const [randomPage, setRandomPage] = useState(1);
-  const [animeNumber, setAnimeNumber] = useState(1);
-  const [animeList, setAnimeList] = useState([]);
 
   useEffect(() => {
     const getRandomMedia = () => {
@@ -17,7 +15,6 @@ const RandomMedia = ({ type }) => {
         const randomPage = getRandomInt(min, max, 1)
         const randomId = getRandomInt(0, 49, 1)
         setRandomPage(randomPage);
-        setAnimeNumber(randomId);
       }
     getRandomMedia()
   }, [])
@@ -30,8 +27,11 @@ const RandomMedia = ({ type }) => {
     onCompleted: (data) => {
         console.log(data)
         let number = getRandomInt(0, data.Page.media.length, 1)
-        const animeId = data.Page.media[number].id
-        navigate(`/anime/${animeId}`)
+        const mediaId = data.Page.media[number].id
+        if (type === 'ANIME')
+          navigate(`/anime/${mediaId}`)
+        else
+          navigate(`/manga/${mediaId}`)
         // setAnimeList(data.Page.media)
     },
     onError: (error) => {

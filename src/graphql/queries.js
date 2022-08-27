@@ -1,10 +1,10 @@
 import { gql } from "@apollo/client";
 
-export const GET_ANIME_LIST = gql`
-    query GetAnimeList($page: Int!) {
+export const GET_MEDIA_LIST = gql`
+    query GetMediaList($page: Int!, $type: MediaType!) {
         Page(perPage: 50, page: $page) {
             media(
-              type: ANIME, 
+              type: $type,
               status_not_in: NOT_YET_RELEASED, 
               format_not_in: [SPECIAL, MUSIC, TV_SHORT],
               sort: SCORE_DESC
@@ -58,9 +58,9 @@ export const GET_RECOMMENDATIONS = gql`
   }
 `;
 
-export const GET_ANIME = gql`
-    query GetAnime($id: Int!) {
-        Media(id: $id, type: ANIME) {
+export const GET_MEDIA = gql`
+    query GetAnime($id: Int!, $type: MediaType!) {
+        Media(id: $id, type: $type) {
             id
             title {
                 romaji
@@ -73,6 +73,9 @@ export const GET_ANIME = gql`
                 large
                 medium
             }
+            chapters
+            volumes
+            type
             episodes
             format
             status
