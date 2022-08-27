@@ -80,7 +80,7 @@ const Menu = () => {
                 </div>
             </div>
         </div>
-        <div className={`bg-brightGreen/90 w-full h-full absolute -left-1/3 top-1/2`} style={{
+        <div className={`bg-brightGreen/70 w-full h-full absolute -left-1/3 top-1/2`} style={{
             transform: 'rotate(45deg) scale(1.8)',
         }}></div>
         <div className='w-full h-full absolute menu-bg-image' style={{
