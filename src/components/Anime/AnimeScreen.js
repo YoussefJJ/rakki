@@ -36,13 +36,13 @@ function AnimeScreen({ type }) {
       animeData.startDate.year, 
       animeData.startDate.month, 
       animeData.startDate.day
-    );
+    ) || 'Unknown';
 
     const endDate = formatDate(
       animeData.endDate.year, 
       animeData.endDate.month, 
       animeData.endDate.day
-    );
+    ) || 'Ongoing';
 
     const originalRun = startDate + ' - ' + endDate 
 
