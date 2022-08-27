@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Logo from '../../assets/img/rakki-logo-purple.svg'
 import { useQuery } from '@apollo/client/react'
+import { Link } from 'react-router-dom'
 import { GET_COVERS } from '../../graphql/queries'
 import { getRandomInt } from '../../utilities/utils'
  
@@ -37,7 +38,7 @@ const Menu = () => {
   useEffect(() => {
     if (covers.anime && open) {
         let number = getRandomInt(0, covers.anime.length - 1)
-        
+
         while (!covers.anime[number] || !covers.manga[number])
             number = getRandomInt(0, covers.anime.length - 1)
 
@@ -61,20 +62,21 @@ const Menu = () => {
             }}></img>
             <div id="links" className='pl-7 flex font-osaka flex-col space-y-3 text-6xl text-darkPurple'>
                 <div>
-                    <a 
+                    <Link to={'/anime'}
+                    onClick={() => setOpen(false)}
                     onMouseEnter={() => setCoverImage(covers.anime[coverImgNumber])}
-                    href='#' 
                     className='hover-underline-animation hover:text-white after:bg-white'>
                         RANDOM ANIME
-                    </a>
+                    </Link>
                 </div>
                 <div>
-                    <a href='#'
+                    <Link to={'/manga'}
+                    onClick={() => setOpen(false)}
                     onMouseEnter={() => setCoverImage(covers.manga[coverImgNumber])}
                     className='hover-underline-animation hover:text-white after:bg-white'
                     >
                         RANDOM MANGA
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>
