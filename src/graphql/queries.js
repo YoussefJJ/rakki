@@ -39,6 +39,7 @@ export const GET_RECOMMENDATIONS = gql`
             mediaRecommendation {
               id
               genres
+              type
               averageScore
               coverImage {
                 extraLarge

@@ -10,9 +10,16 @@ const Recommendation = ({
     data
 }) => {
   const navigate = useNavigate()
+  const handleNavigate = (id) => {
+    if (data.type === 'ANIME') {
+      navigate(`/anime/${id}`)
+    } else {
+      navigate(`/manga/${id}`)
+    }
+  }
   const genres = data.genres.map(genre => genre).join(', ')
   return (
-    <RecContent onClick={() => navigate(`/anime/${data.id}`)}>
+    <RecContent onClick={() => handleNavigate(data.id)}>
         <RecTitle englishTitle={data.title.english} romajiTitle={data.title.romaji}/>
         <RecImage imageUrl={getAnimeCover(data)} altTitle={data.title.romaji}/>
         <RecGenres genres={genres}/>
