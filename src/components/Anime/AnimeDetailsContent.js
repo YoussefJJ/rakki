@@ -1,4 +1,5 @@
 import React from 'react'
+import { LINK_DEFAULT } from '../../utilities/constants'
 import { getFormat } from '../../utilities/utils'
 
 const AnimeDetailsContent = ({
@@ -59,7 +60,7 @@ const AnimeDetailsContent = ({
               {externalLinks.map((extLink) => (
                 <a target="_blank" href={extLink.url} className="mr-1 last:mr-0 hover:-translate-y-1">
                   <img
-                    src={extLink.icon}
+                    src={extLink.icon || LINK_DEFAULT}
                     style={{ height: "16px", width: "16px" }}
                   ></img>
                 </a>
