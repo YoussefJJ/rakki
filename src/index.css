@@ -25,6 +25,11 @@ code {
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'OSAKA';
+  src: url(../public/fonts/osaka-re.ttf);
+}
+
 @layer utilities {
 
   .scroll-bar {
