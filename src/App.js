@@ -17,7 +17,9 @@ function App() {
         <Route path='/' element={<Layout/>}>
           <Route exact path="/" element={<RandomMedia type="ANIME"/>} />
           <Route path='/anime' element={<RandomMedia type="ANIME"/>}/>
-          <Route path="/anime/:id" element={<AnimeScreen/>}/>
+          <Route path='/manga' element={<RandomMedia type="MANGA"/>}/>
+          <Route path="/anime/:id" element={<AnimeScreen type="ANIME"/>}/>
+          <Route path="/manga/:id" element={<AnimeScreen type="MANGA"/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
