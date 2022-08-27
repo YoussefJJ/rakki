@@ -1,20 +1,21 @@
 import React, { useState } from "react";
-import { GET_ANIME } from "../../graphql/queries";
+import { GET_ANIME, GET_MEDIA } from "../../graphql/queries";
 import { useQuery } from "@apollo/client";
 import { AnimeContent } from "./AnimeContent";
 import { capitalizeEachFirstLetter, capitalizeFirstLetter, formatDate, formatStatus, getAnimeCover, getRegionName } from "../../utilities/utils";
 import AnimeBackground from "./AnimeBackground";
 import { useParams } from "react-router-dom";
 
-function AnimeScreen() {
+function AnimeScreen({ type }) {
   const animeId = useParams().id || 1;
   const [anime, setAnime] = useState();
   const [bgImage, setBgImage] = useState(
     "https://www.solidbackgrounds.com/images/2560x1440/2560x1440-davys-grey-solid-color-background.jpg"
   );
-  const { data, loading, error } = useQuery(GET_ANIME, {
+  const { data, loading, error } = useQuery(GET_MEDIA, {
     variables: {
       id: +animeId,
+      type: type
     },
     onCompleted: (data) => {
       console.log(data);
@@ -62,7 +63,6 @@ function AnimeScreen() {
     const recommendations = animeData.recommendations.edges.map(recommendation => 
       recommendation.node.mediaRecommendation
     )
-    console.log(recommendations)
     return { ...animeData, relatedMedia, status, originalRun, description, externalLinks, countryOfOrigin: regionName, recommendations };
   }
 
