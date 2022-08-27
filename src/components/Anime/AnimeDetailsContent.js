@@ -58,7 +58,7 @@ const AnimeDetailsContent = ({
             <strong>Watch on: </strong>
             <div className="flex justify-center">
               {externalLinks.map((extLink) => (
-                <a target="_blank" href={extLink.url} className="mr-1 last:mr-0 hover:-translate-y-1">
+                <a key={extLink.id} target="_blank" href={extLink.url} className="mr-1 last:mr-0 hover:-translate-y-1">
                   <img
                     src={extLink.icon || LINK_DEFAULT}
                     style={{ height: "16px", width: "16px" }}
