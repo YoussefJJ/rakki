@@ -35,8 +35,12 @@ const Menu = () => {
   })
 
   useEffect(() => {
-    if (covers.anime && open){
-        const number = getRandomInt(0, covers.anime.length - 1)
+    if (covers.anime && open) {
+        let number = getRandomInt(0, covers.anime.length - 1)
+        
+        while (!covers.anime[number] || !covers.manga[number])
+            number = getRandomInt(0, covers.anime.length - 1)
+
         setCoverImgNumber(number)
         setCoverImage(covers.anime[number])
     }
