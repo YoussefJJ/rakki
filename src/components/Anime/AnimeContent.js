@@ -33,6 +33,8 @@ export const AnimeContent = ({anime}) => {
           </div>
           {/* General Info */}
           <AnimeDetails
+            chapters={anime.chapters}
+            volumes={anime.volumes}
             format={anime.format}
             status={anime.status}
             duration={anime.duration}
@@ -49,7 +51,7 @@ export const AnimeContent = ({anime}) => {
             <AnimePlot plot={anime.description}/>
             <div className="flex flex-col items-start mt-3 2xl:mt-18">
               <AnimeInfo infoTitle={'Genres'}>{anime.genres.map(genre => genre).join(', ')}</AnimeInfo>
-              <AnimeInfo infoTitle={'Studios'}>{anime.studios.edges.filter(studio => studio.node.isAnimationStudio === true).map(studio => studio.node.name).join(', ')}</AnimeInfo>
+              {anime.type === 'ANIME' && <AnimeInfo infoTitle={'Studios'}>{anime.studios.edges.filter(studio => studio.node.isAnimationStudio === true).map(studio => studio.node.name).join(', ')}</AnimeInfo>}
               <AnimeInfo infoTitle={'Original Run'}>{anime.originalRun}</AnimeInfo>
               {/* <RelatedMedia media={anime.relatedMedia}>See Related Media</RelatedMedia> */}
               {/* <AnimeInfo infoTitle={'Related Media'}>
