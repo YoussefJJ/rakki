@@ -67,7 +67,7 @@ function AnimeScreen({ type }) {
     return { ...animeData, relatedMedia, status, originalRun, description, externalLinks, countryOfOrigin: regionName, recommendations };
   }
 
-  if (loading) return <RandomLoading text={"Loading..."}/>;
+  if (loading) return <RandomLoading text={"Loading"}/>;
   if (error) return `Error! ${error.message}`;
 
   return (
