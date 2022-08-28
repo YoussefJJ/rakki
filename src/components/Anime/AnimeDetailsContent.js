@@ -14,7 +14,7 @@ const AnimeDetailsContent = ({
     externalLinks
 }) => {
   return (
-    <div className="p-4">
+    <div className="p-3">
       {format ? (<div className="flex flex-wrap justify-between items-center">
         <strong>Format: </strong>
         <span className="text-sm md:text-base text-gray-300">{getFormat(format)}</span>
