@@ -5,6 +5,7 @@ import { AnimeContent } from "./AnimeContent";
 import { capitalizeEachFirstLetter, capitalizeFirstLetter, formatDate, formatStatus, getAnimeCover, getRegionName } from "../../utilities/utils";
 import AnimeBackground from "./AnimeBackground";
 import { useParams } from "react-router-dom";
+import RandomLoading from "../RandomMedia/RandomLoading";
 
 function AnimeScreen({ type }) {
   const animeId = useParams().id || 1;
@@ -66,7 +67,7 @@ function AnimeScreen({ type }) {
     return { ...animeData, relatedMedia, status, originalRun, description, externalLinks, countryOfOrigin: regionName, recommendations };
   }
 
-  if (loading) return "Loading...";
+  if (loading) return <RandomLoading text={"Loading..."}/>;
   if (error) return `Error! ${error.message}`;
 
   return (
