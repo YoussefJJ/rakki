@@ -464,7 +464,25 @@ input:checked + .slider .off
   /* animation: fadeIn .5s ease-in-out; */
 }
 
+.loading-image {
+  height: 30vh;
+  width: 30vh;
+  animation: loading-image-animation 1s ease-in-out infinite;
+}
 
+.loading-gif {
+  height: '64px';
+  width: '64px';
+}
+
+@keyframes loading-image-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 
 @keyframes fadeIn {
