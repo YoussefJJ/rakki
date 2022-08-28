@@ -6,7 +6,7 @@ import { GET_COVERS } from '../../graphql/queries'
 import { getRandomInt } from '../../utilities/utils'
  
 
-const Menu = () => {
+const Menu = ({ showBanner = true}) => {
   const [open, setOpen] = useState(false)
   const [covers, setCovers] = useState([])
   const [skip, setSkip] = useState(false)
@@ -80,7 +80,7 @@ const Menu = () => {
                 </div>
             </div>
         </div>
-        <div className={`bg-veryDarkPurple/70 border-4 border-black shadow-greenRecShadow-md w-full h-full absolute -left-1/3 top-1/2`} style={{
+        <div className={`bg-veryDarkPurple/70 border-4 border-black shadow-greenRecShadow-md w-full hidden h-full absolute -left-1/3 top-1/2 md:block`} style={{
             transform: 'rotate(45deg) scale(1.8)',
         }}></div>
         <div className='w-full h-full absolute menu-bg-image' style={{
