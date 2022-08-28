@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Logo from '../../assets/img/rakki-logo-purple.svg'
+import Logo from '../../assets/img/rakki-logo-green.svg'
 import { useQuery } from '@apollo/client/react'
 import { Link } from 'react-router-dom'
 import { GET_COVERS } from '../../graphql/queries'
@@ -60,7 +60,7 @@ const Menu = () => {
                 height: '200px',
                 width: '300px',
             }}></img>
-            <div id="links" className='pl-7 flex font-osaka flex-col space-y-3 text-6xl text-darkPurple'>
+            <div id="links" className='pl-7 flex font-osaka flex-col space-y-3 text-6xl text-brightGreen'>
                 <div>
                     <Link to={'/anime'}
                     onClick={() => setOpen(false)}
@@ -80,7 +80,7 @@ const Menu = () => {
                 </div>
             </div>
         </div>
-        <div className={`bg-brightGreen/70 w-full h-full absolute -left-1/3 top-1/2`} style={{
+        <div className={`bg-veryDarkPurple/70 border-4 border-black shadow-greenRecShadow-md w-full h-full absolute -left-1/3 top-1/2`} style={{
             transform: 'rotate(45deg) scale(1.8)',
         }}></div>
         <div className='w-full h-full absolute menu-bg-image' style={{
