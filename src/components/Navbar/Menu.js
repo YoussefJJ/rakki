@@ -87,6 +87,7 @@ const Menu = ({ showBanner = true}) => {
             zIndex: '-1',
             backgroundImage: `${coverImage ? `url('${coverImage}')` : ''}`,
             backgroundSize: 'cover',
+            backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             filter: 'blur(5px) brightness(0.3)',
         }}></div>
