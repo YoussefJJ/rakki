@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client';
 import React, { useEffect, useState } from 'react'
 import { Link, Outlet, Route, Routes, useNavigate } from 'react-router-dom';
 import { GET_MEDIA_LIST } from '../../graphql/queries';
-import { getRandomInt } from '../../utilities/utils'
+import { capitalizeFirstLetter, getRandomInt } from '../../utilities/utils'
 import RandomLoading from './RandomLoading';
 
 const RandomMedia = ({ type }) => {
@@ -44,7 +44,7 @@ const RandomMedia = ({ type }) => {
 
   if (loading) {
     // return <div>Loading...</div>
-    return <RandomLoading text={`Generating Random ${type}...`}/>
+    return <RandomLoading text={`Generating Random ${capitalizeFirstLetter(type)}`}/>
   }
 
   return (<></>
