@@ -475,6 +475,26 @@ input:checked + .slider .off
   width: '64px';
 }
 
+.loading-text::after {
+    display: inline-block;
+    animation: ellipsis 1.25s infinite;
+    content: ".";
+    width: 1em;
+    text-align: left;
+}
+
+@keyframes ellipsis {
+  0% {
+    content: ".";
+  }
+  33% {
+    content: "..";
+  }
+  66% {
+    content: "...";
+  }
+}
+
 @keyframes loading-image-animation {
   0% {
     transform: rotate(0deg);
