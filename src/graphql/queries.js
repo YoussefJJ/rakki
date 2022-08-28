@@ -165,11 +165,19 @@ export const GET_COVERS = gql`
   mangaPage: Page(page: $page, perPage: 50) {
     media(sort: POPULARITY_DESC, type: MANGA) {
       bannerImage
+      title {
+        romaji
+        english
+      }
     }
   }
   animePage: Page(page: $page, perPage: 50) {
     media(sort: POPULARITY_DESC, type: ANIME) {
       bannerImage
+      title {
+        romaji
+        english
+      }
     }
   }
 }

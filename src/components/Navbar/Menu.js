@@ -19,12 +19,8 @@ const Menu = ({ showBanner = true}) => {
     },
     skip,
     onCompleted: (data) => {
-        const animeCovers = data.animePage.media.map((media) => {
-            return media.bannerImage
-        })
-        const mangaCovers = data.mangaPage.media.map((media) => {
-            return media.bannerImage
-        })
+        const animeCovers = data.animePage.media
+        const mangaCovers = data.mangaPage.media
 
         setCovers({
             anime: animeCovers,
@@ -85,12 +81,15 @@ const Menu = ({ showBanner = true}) => {
         }}></div>
         <div className='w-full h-full absolute menu-bg-image' style={{
             zIndex: '-1',
-            backgroundImage: `${coverImage ? `url('${coverImage}')` : ''}`,
+            backgroundImage: `${coverImage?.bannerImage ? `url('${coverImage?.bannerImage}')` : ''}`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             filter: 'blur(5px) brightness(0.3)',
         }}></div>
+        <span 
+        title={coverImage?.title?.romaji}
+        className='w-1/6 text-right mr-0.5 line-clamp-2 text-xs text-white font-medium absolute bottom-0 right-0'>{coverImage?.title.romaji}</span>
     </div>
 
 </div>
