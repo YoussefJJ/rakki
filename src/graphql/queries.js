@@ -182,3 +182,36 @@ export const GET_COVERS = gql`
   }
 }
 `;
+
+export const GET_MEDIA_LIST_BY_SEARCH_QUERY = gql`
+query searchByName($search: String) {
+  anime:Page {
+    media(search: $search, sort: POPULARITY_DESC, type: ANIME, isAdult: false) {
+      id
+      title {
+        romaji
+        english
+        native
+        userPreferred
+      }
+      coverImage {
+        large
+      }
+    }
+  }
+  manga:Page {
+    media(search: $search, sort: POPULARITY_DESC, type: MANGA, isAdult: false) {
+      id
+      title {
+        romaji
+        english
+        native
+        userPreferred
+      }
+      coverImage {
+        large
+      }
+    }
+  }
+}
+`;
