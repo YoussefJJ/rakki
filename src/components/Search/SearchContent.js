@@ -34,7 +34,7 @@ const SearchContent = ({ onClose }) => {
 
   return (
     <div className='flex flex-col justify-between items-center w-11/12 mx-auto'>
-        <div className='w-4/5 flex justify-center items-center' style={{
+        <div className='search-input w-4/5 flex justify-center items-center' style={{
             minHeight: '33.3333vh'
         }}>
             <SearchBox onChange={handleSearch}/>

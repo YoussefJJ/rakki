@@ -482,6 +482,11 @@ input:checked + .slider .off
     text-align: left;
 }
 
+.search-input {
+  animation: fadeInUp .3s ease-in-out;
+}
+
+
 @keyframes ellipsis {
   0% {
     content: ".";
