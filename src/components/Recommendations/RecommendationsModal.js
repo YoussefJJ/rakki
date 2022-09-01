@@ -1,11 +1,11 @@
 import { useLazyQuery, useQuery } from "@apollo/client";
 import React, { useState, useEffect } from "react";
-import { GET_RECOMMENDATIONS } from "../graphql/queries";
-import Modal from "./Modal/Modal";
-import ModalBody from "./Modal/ModalBody";
-import ModalFooter from "./Modal/ModalFooter";
-import LoadMoreButton from "./Recommendations/LoadMoreButton";
-import Recommendation from "./Recommendations/Recommendation";
+import { GET_RECOMMENDATIONS } from "../../graphql/queries";
+import Modal from '../Modal/Modal'
+import ModalBody from "../Modal/ModalBody";
+import ModalFooter from "../Modal/ModalFooter";
+import LoadMoreButton from "./LoadMoreButton";
+import Recommendation from "./Recommendation";
 
 export const RecommendationsModal = ({ from }) => {
 
