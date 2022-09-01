@@ -1,6 +1,8 @@
 import React from 'react'
 import Logo from '../../assets/img/rakki-logo-green.svg'
 import Menu from './Menu'
+import Menu2nd from './Menu2nd'
+import Search from '../Search/SearchModal'
 
 const Navbar = () => {
   return (
@@ -16,7 +18,10 @@ const Navbar = () => {
                     }}/>
                 </div>
             </div>
-            <Menu/>
+            <div className='flex'>
+              <Search/>
+              <Menu/>
+            </div>
         </div>
     </nav>
   )
