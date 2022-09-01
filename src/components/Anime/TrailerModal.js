@@ -40,10 +40,10 @@ const TrailerModal = ({
                  className='fixed right-0 p-2 flex justify-items-center items-center group'>
                   <button className="h-6 w-6 cursor-pointer relative " onClick={() => setShowModal(false)}>
                       <div className='relative'>
-                        <span className="close-button" style={{
+                        <span className="close-button bg-white" style={{
                           transform: 'rotate(45deg)',
                         }}></span>
-                        <span className="close-button" style={{
+                        <span className="close-button bg-white" style={{
                           transform: 'rotate(-45deg)',
                         }}></span>
                       </div>

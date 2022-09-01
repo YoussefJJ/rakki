@@ -252,7 +252,6 @@ input:checked + .slider .off
   left: 0;
   height: 0.125rem;
   width: 1.5rem;
-  background-color: white;
   z-index: 30;
   transition: background-color .3s ease;
 }

@@ -37,20 +37,22 @@ const SearchModal = () => {
         <div 
             onClick={handleClose}
             id="search-modal"
-            className='h-screen w-screen inset-0 fixed bg-black/90 backdrop-blur-sm p-3 overflow-y-auto' style={{
+            className='inset-0 fixed bg-black/90 backdrop-blur-sm p-3 overflow-y-auto' style={{
                 zIndex: 9999
         }}>
+        <div className='fixed right-0 p-2 flex justify-center items-center' onClick={() => setOpen(false)}>
+            <button className='relative h-6 w-6'>
+                <div className='relative'>
+                    <span className='close-button bg-brightGreen' style={{
+                        transform: 'rotate(45deg)'
+                    }}></span>
+                    <span className='close-button bg-brightGreen' style={{
+                        transform: 'rotate(-45deg)',
+                    }}></span>
+                </div>
+            </button>
+        </div>
         <SearchContent onClose={handleClose}/>
-        <button className='fixed top-0 right-0 h-6 w-6' onClick={() => setOpen(false)}>
-            <div className='relative'>
-                <span className='absolute left-0 w-1 h-6 bg-brightGreen' style={{
-                    transform: 'rotate(45deg)',
-                }}></span>
-                <span className='absolute left-0 w-1 h-6 bg-brightGreen' style={{
-                    transform: 'rotate(-45deg)',
-                }}></span>
-            </div>
-        </button>
     </div>
     ) : null}
     </>
