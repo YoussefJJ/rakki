@@ -19,12 +19,13 @@ const Menu = ({ showBanner = true}) => {
     },
     skip,
     onCompleted: (data) => {
-        const animeCovers = data.animePage.media
-        const mangaCovers = data.mangaPage.media
+        const animeCovers = data.animePage.media.filter(anime => anime.bannerImage !== null)
+        const mangaCovers = data.mangaPage.media.filter(manga => manga.bannerImage !== null)
+        const length = Math.min(animeCovers.length, mangaCovers.length)
 
         setCovers({
-            anime: animeCovers,
-            manga: mangaCovers
+            anime: animeCovers.slice(0, length),
+            manga: mangaCovers.slice(0, length)
         })
         setCoverImage(animeCovers[0])
         setSkip(true)
