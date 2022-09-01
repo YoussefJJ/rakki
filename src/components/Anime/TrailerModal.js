@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { DAILYMOTION_URL, YOUTUBE_URL } from '../utilities/constants'
+import { DAILYMOTION_URL, YOUTUBE_URL } from '../../utilities/constants'
 
 const TrailerModal = ({
     trailer,
