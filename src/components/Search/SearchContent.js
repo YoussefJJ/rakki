@@ -2,6 +2,7 @@ import { useLazyQuery } from '@apollo/client'
 import React, { useState } from 'react'
 import { GET_MEDIA_LIST_BY_SEARCH_QUERY } from '../../graphql/queries'
 import SearchBox from './SearchBox'
+import SearchLoading from './SearchLoading'
 import SearchResults from './SearchResults'
 
 const SearchContent = ({ onClose }) => {
@@ -39,7 +40,7 @@ const SearchContent = ({ onClose }) => {
         }}>
             <SearchBox onChange={handleSearch}/>
         </div>
-        {loading ? <div>Loading...</div> : <div className='flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-8 w-full h-5/6'>
+        {loading ? <SearchLoading/> : <div className='flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-8 w-full h-5/6'>
             { data && 
             (
             <>
