@@ -6,7 +6,6 @@ const SearchModal = () => {
   const [open, setOpen] = useState(false)
 
   const handleClose = (e) => {
-    console.log(e.target)
     if (e.target.id === 'search-modal') {
       setOpen(false)
     }
