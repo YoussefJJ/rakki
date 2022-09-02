@@ -194,6 +194,12 @@ query searchByName($search: String) {
         native
         userPreferred
       }
+      type
+      format
+      description
+      episodes
+      seasonYear
+      season
       coverImage {
         large
       }
@@ -208,6 +214,9 @@ query searchByName($search: String) {
         native
         userPreferred
       }
+      description
+      format
+      chapters
       coverImage {
         large
       }
