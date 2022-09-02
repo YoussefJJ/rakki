@@ -486,6 +486,15 @@ input:checked + .slider .off
   animation: fadeInUp .3s ease-in-out;
 }
 
+.results {
+  animation: fadeIn .3s ease-in-out;
+}
+
+.result {
+  animation: fadeInUp .3s ease-in-out;
+  animation-delay: 100ms;
+}
+
 
 @keyframes ellipsis {
   0% {
