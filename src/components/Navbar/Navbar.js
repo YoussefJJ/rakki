@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className='h-20 bg-veryDarkPurple'>
         <div className='flex justify-between items-center w-full h-full'>
             <div id="logo_and_links">
-                <div className='flex flex-row justify-start items-center w-full'>
+                <div className='flex flex-row justify-start items-center w-full logo'>
                     <img 
                     src={Logo}
                     style={{
