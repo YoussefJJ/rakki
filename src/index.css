@@ -495,6 +495,51 @@ input:checked + .slider .off
   animation-delay: 100ms;
 }
 
+.logo:hover {
+  animation: bobble .3s ease-in-out;
+  cursor: pointer;
+}
+
+.anime-cover > img {
+  filter: brightness(100%);
+  transition: filter .3s ease-in-out;
+}
+
+.anime-cover:hover > img{
+  filter: brightness(50%);
+}
+
+.anime-cover:hover .favourite {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.favourite {
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(-30%);
+  transition: all .3s ease-in-out;
+}
+
+#fav-icon path {
+  transition: fill .1s ease-in-out;
+}
+
+.pressed-animation {
+  animation: press .3s ease-out;
+}
+
+@keyframes press {
+  0% {
+    transform: scale(0)
+  }
+  66%{
+    transform: scale(1.2)
+  }
+  100% {
+    transform: scale(1)
+  }
+}
 
 @keyframes ellipsis {
   0% {
@@ -527,6 +572,21 @@ input:checked + .slider .off
   }
 }
 
+@keyframes bobble {
+  0% {
+    transform: rotate(3deg);
+  }
+  33% {
+    transform: rotate(0deg);
+  }
+  66% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+
+}
 
 
 
