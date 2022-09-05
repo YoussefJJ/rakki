@@ -1,15 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import AnimeScreen from './components/Anime/AnimeScreen';
 import RandomMedia from './components/RandomMedia/RandomMedia';
-import { Context } from './contexts/store.context';
-import RandomAnime from './components/RandomMedia/RandomAnime';
-import { useContext } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/pages/Layout';
+import Favourites from './components/Favourites/Favourites';
 
 function App() {
-  const {animeList, setAnimeList} = useContext(Context)
   
   return (
     <BrowserRouter>
@@ -20,6 +16,7 @@ function App() {
           <Route path='/manga' element={<RandomMedia type="MANGA"/>}/>
           <Route path="/anime/:id" element={<AnimeScreen type="ANIME"/>}/>
           <Route path="/manga/:id" element={<AnimeScreen type="MANGA"/>}/>
+          <Route path="/favourites" element={<Favourites/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
