@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import MediaContextProvider, { Store } from './contexts/store.context';
 
   // setting ApolloClient
   const client = new ApolloClient({
@@ -20,7 +21,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <MediaContextProvider>
+        <App />
+      </MediaContextProvider>
     </ApolloProvider>
   </React.StrictMode>
 );
