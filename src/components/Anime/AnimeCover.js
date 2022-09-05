@@ -7,7 +7,7 @@ const AnimeCover = ({anime}) => {
   return (
     <div className='md:h-4/6 relative anime-cover'>
       <div className='absolute top-0 right-0 p-2 favourite w-full h-full'>
-        <AddToFavourite/>
+        <AddToFavourite id={anime.id} type={anime.type}/>
       </div>
         <img 
         onLoad={() => setLoading(false)}
