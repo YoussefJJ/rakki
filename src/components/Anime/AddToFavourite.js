@@ -6,14 +6,14 @@ import { MediaContext } from '../../contexts/store.context'
 
 const AddToFavourite = ({ id, type }) => {
   const { medias, dispatch } = useContext(MediaContext)
-  const [toggle, setToggle] = useState(medias.mediaList.find(mediaId => mediaId === id) ? true : false)
+  const [toggle, setToggle] = useState(medias.mediaList[type.toLowerCase()].find(mediaId => mediaId === id) ? true : false)
 
   const handleClick = () => {
     //check if already added to favourites
-    if (medias.mediaList.find(mediaId => mediaId === id)) {
-      dispatch({ type: `REMOVE_MEDIA`, payload: { id } })
+    if (medias.mediaList[type.toLowerCase()].find(mediaId => mediaId === id)) {
+      dispatch({ type: `REMOVE_${type}`, payload: { id } })
     } else {
-      dispatch({ type: `ADD_MEDIA`, payload: { id } })
+      dispatch({ type: `ADD_${type}`, payload: { id } })
     }
     setToggle(!toggle)
     // dispatch({type: `ADD_${type.toUpperCase()}`, payload: {id}})

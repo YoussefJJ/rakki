@@ -6,15 +6,20 @@ import { mediaReducer } from "../reducers/mediaReducer";
 export const MediaContext = createContext();
 
 const MediaContextProvider = (props) => {
-    const [medias, dispatch] = useReducer(mediaReducer, {mediaList: []}, () => {
+    const [medias, dispatch] = useReducer(mediaReducer, {mediaList: {
+        anime: [],
+        manga: []
+    }}, () => {
         const localData = localStorage.getItem('mediaList');
         return localData ? JSON.parse(localData) : {
-            mediaList: []}
+            mediaList: {
+                anime: [],
+                manga: []
+            }}
     });
 
     useEffect(() => {
         localStorage.setItem('mediaList', JSON.stringify(medias))
-        console.log(medias)
     }, [medias])
     
     return (
