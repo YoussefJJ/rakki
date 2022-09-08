@@ -283,19 +283,15 @@ input:checked + .slider .off
 .related-media-preview-open {
   visibility: visible;
   z-index: 50;
-  left: 0;
-  bottom: 100%;
   opacity: 1;
-  transition: opacity .5s ease-in, visbility .5s ease-in;
+  transition: opacity .2s ease-in, visibility .2s ease-in;
 }
 
 .related-media-preview-closed {
   visibility: hidden;
   z-index: 50;
-  left: 0;
-  bottom: 100%;
   opacity: 0;
-  transition: opacity .5s ease-in, visbility .5s ease-in;
+  transition: opacity .2s ease-in, visibility .2s ease-in;
 }
 /*
 .related-media:hover .related-media-preview {
@@ -527,6 +523,10 @@ input:checked + .slider .off
 
 .pressed-animation {
   animation: press .3s ease-out;
+}
+
+.favourite-item {
+  animation: fadeInUp .3s ease-in-out;
 }
 
 @keyframes press {
