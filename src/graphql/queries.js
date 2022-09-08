@@ -224,3 +224,44 @@ query searchByName($search: String) {
   }
 }
 `;
+
+export const GET_MEDIA_LIST_BY_IDS = gql`
+query getMediaListByIds($animeIds: [Int], $mangaIds: [Int]) {
+  anime:Page {
+    media(id_in: $animeIds, type: ANIME) {
+      id
+      description
+      title {
+        romaji
+        english
+        native
+        userPreferred
+      }
+      type
+      format
+      episodes
+      coverImage {
+        large
+      }
+    }
+  }
+  manga:Page {
+    media(id_in: $mangaIds, type: MANGA) {
+      id
+      description
+      title {
+        romaji
+        english
+        native
+        userPreferred
+      }
+      type
+      format
+      chapters
+      coverImage {
+        large
+      }
+    }
+  }
+}
+`;
