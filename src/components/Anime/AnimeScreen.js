@@ -20,9 +20,7 @@ function AnimeScreen({ type }) {
       type: type
     },
     onCompleted: (data) => {
-      console.log(data);
       const animeData = processAnimeData(data);
-      console.log(animeData);
       setAnime(animeData);
       setBgImage(getAnimeCover(animeData));
     },

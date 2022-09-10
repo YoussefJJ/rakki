@@ -68,7 +68,6 @@ export const RecommendationsModal = ({ from }) => {
     setPage(page + 1);
   }
 
-  console.log(recommendations)
   if (loading) return <p>Loading...</p>;
   return (
     <Modal 
