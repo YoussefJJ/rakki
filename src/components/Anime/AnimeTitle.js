@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { getFirstNWords } from '../../utilities/utils';
+import React from 'react'
 
 function AnimeTitle({small = false, mobileScreen = false, children}) {
   if (!mobileScreen) 
