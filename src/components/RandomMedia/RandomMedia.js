@@ -10,6 +10,7 @@ const RandomMedia = ({ type }) => {
   const [randomPage, setRandomPage] = useState(1);
 
   useEffect(() => {
+    document.title = `Generating Random ${capitalizeFirstLetter(type)} | Rakki`
     const getRandomMedia = () => {
         const min = 0;
         const max = 100;

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { GET_ANIME, GET_MEDIA } from "../../graphql/queries";
+import { GET_MEDIA } from "../../graphql/queries";
 import { useQuery } from "@apollo/client";
 import { AnimeContent } from "./AnimeContent";
-import { capitalizeEachFirstLetter, capitalizeFirstLetter, formatDate, formatStatus, getAnimeCover, getRegionName } from "../../utilities/utils";
+import { formatDate, formatStatus, getAnimeCover, getRegionName } from "../../utilities/utils";
 import AnimeBackground from "./AnimeBackground";
 import { useParams } from "react-router-dom";
 import RandomLoading from "../RandomMedia/RandomLoading";
+import { useEffect } from "react";
 
 function AnimeScreen({ type }) {
   const animeId = useParams().id || 1;
@@ -29,6 +30,11 @@ function AnimeScreen({ type }) {
       console.log(error);
     },
   });
+
+  useEffect(() => {
+    if (anime)
+      document.title = `${anime.title.romaji} | Rakki`
+  }, [anime])
 
   function processAnimeData(data) {
     const animeData = data.Media;
