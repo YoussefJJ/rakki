@@ -17,7 +17,7 @@ export function formatDate(year, month, day) {
   if (!day) {
     delete options.day;
   }
-  console.log(options)
+  
   if (Object.keys(options).length === 0)
     return null;
   
