@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import Heart from '../../assets/img/heart.svg'
 import { ReactComponent as Hf} from '../../assets/img/heart-filled.svg'
 import { useState } from 'react'
 import { MediaContext } from '../../contexts/store.context'
@@ -12,6 +11,10 @@ const AddToFavourite = ({ id, type, mobileScreen = true }) => {
   const handleClick = () => {
     //check if already added to favourites
     if (medias && medias.mediaList[type.toLowerCase()].find(mediaId => mediaId === id)) {
+      if (medias.mediaList[type.toLowerCase()].length > 49) {
+        setMessage('Maximum 50 items allowed in favourites')
+        return
+      }
       dispatch({ type: `REMOVE_${type}`, payload: { id } })
       setMessage('Removed from favourites')
     } else {
