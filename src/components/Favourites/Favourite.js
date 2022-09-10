@@ -5,7 +5,6 @@ import { capitalizeFirstLetter, removeTags } from '../../utilities/utils'
 
 const Favourite = ({ media }) => {
   const [hoverTimeOut, setHoverTimeOut] = useState(null)
-  const [hover, setHover] = useState(false)
   const [show, setShow] = useState(false)
   const [position, setPosition] = useState('top')
   const hoverRef = React.useRef(null)
