@@ -6,6 +6,7 @@ import FavouritesTab from './FavouritesTab'
 import FavouritesList from './FavouritesList'
 import { useQuery } from '@apollo/client'
 import { GET_MEDIA_LIST_BY_IDS } from '../../graphql/queries'
+import RandomLoading from '../RandomMedia/RandomLoading'
 
 
 const Favourites = () => {
@@ -29,7 +30,7 @@ const Favourites = () => {
       setSkip(true)
     }
   })
-
+  if (loading) return <RandomLoading text={'Loading'}/>
   return (
     <div className='w-full md:min-h-[calc(100vh_-_80px)] bg-veryDarkPurple overflow-hidden'>
       <div className='flex flex-col justify-between items-center w-11/12 mx-auto py-4'>
