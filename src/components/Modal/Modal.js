@@ -42,7 +42,8 @@ export const Modal = ({modalTitle, children, buttonText, disabled, disableText})
               {/* Header */}
               <div className="flex flex-row justify-between items-center p-2">
                 <div className="flex justify-center w-full">
-                  <h2 className="text-2xl md:text-3xl font-bold text-center text-brightGreen">{modalTitle}</h2>
+                  <h2 title={modalTitle}
+                  className="text-xl md:text-2xl font-bold text-center text-brightGreen line-clamp-1">{modalTitle}</h2>
                 </div>
                 <button className="h-6 w-6 cursor-pointer relative" onClick={() => setShowModal(false)}>
                   <span className="h-0.5 w-6 bg-brightGreen left-0 absolute" style={{
