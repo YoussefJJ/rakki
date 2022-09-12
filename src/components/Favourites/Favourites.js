@@ -25,7 +25,6 @@ const Favourites = () => {
     },
     skip,
     onCompleted: (data) => {
-      console.log(data)
       setMediaData(data)
       setSkip(true)
     }
