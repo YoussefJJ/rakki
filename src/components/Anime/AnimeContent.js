@@ -5,8 +5,6 @@ import AnimeInfo from './AnimeInfo'
 import AnimePlot from './AnimePlot'
 import AnimeTitle from './AnimeTitle'
 import TrailerModal from './TrailerModal'
-import { getAnimeCover, getAnimeImage } from '../../utilities/utils'
-import RelatedMedia from './RelatedMedia'
 import AnimeCover from './AnimeCover'
 import AddToFavourite from './AddToFavourite'
 

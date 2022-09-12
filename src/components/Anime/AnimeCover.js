@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { getAnimeImage } from '../../utilities/utils';
-import AddToFavourite from './AddToFavourite';
 
 const AnimeCover = ({anime}) => {
   const [loading, setLoading] = useState(true);
