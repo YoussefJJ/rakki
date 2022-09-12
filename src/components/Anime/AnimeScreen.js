@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { GET_MEDIA } from "../../graphql/queries";
 import { useQuery } from "@apollo/client";
 import { AnimeContent } from "./AnimeContent";
+import MediaError from "./MediaError";
 import { formatDate, formatStatus, getAnimeCover, getRegionName } from "../../utilities/utils";
 import AnimeBackground from "./AnimeBackground";
 import { useParams } from "react-router-dom";
@@ -74,7 +75,7 @@ function AnimeScreen({ type }) {
   if (loading) 
     return <RandomLoading text={"Loading"}/>;
   if (error) 
-    return `Error! ${error.message}`;
+    return (<MediaError/>);
 
   return (
     <>
