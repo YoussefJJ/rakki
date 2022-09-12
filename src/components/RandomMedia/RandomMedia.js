@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import React, { useEffect, useState } from 'react'
-import { Link, Outlet, Route, Routes, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { GET_MEDIA_LIST } from '../../graphql/queries';
 import { capitalizeFirstLetter, getRandomInt } from '../../utilities/utils'
 import RandomLoading from './RandomLoading';
@@ -27,7 +27,6 @@ const RandomMedia = ({ type }) => {
         type: type
     },
     onCompleted: (data) => {
-        console.log(data)
         let number = getRandomInt(0, data.Page.media.length, 1)
         const mediaId = data.Page.media[number].id
         if (type === 'ANIME')
