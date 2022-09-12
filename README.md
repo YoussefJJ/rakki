@@ -5,15 +5,9 @@
 
 ## Introduction
 This app was created as a personal project. It was made using [ReactJS](reactjs.org) and [TailwindCSS](tailwindcss.com) as CSS framework.
-<div style="display: flex; justify-content: space-evenly; align-items: center; flex-wrap: wrap; margin-top: 20px; margin-bottom: 20px;">
+<div align=center>
 <img src="./public/img/React-icon.svg.png"
 height="64px"/>
-<!-- <img 
-height="64px"
-width="256px"
-src="./public/img/tailwindcss-logotype-white.svg"> -->
-<!-- <img 
-src="./public/img/tailwindcss-logotype-white.svg"> -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./public/img/tailwindcss-logotype-white.svg">
   <img 
