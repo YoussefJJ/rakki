@@ -57,7 +57,7 @@ const Menu = ({ showBanner = true}) => {
                 height: '200px',
                 width: '300px',
             }}></img>
-            <div id="links" className='pl-7 flex font-osaka flex-col space-y-3 text-6xl text-brightGreen'>
+            <div id="links" className='pl-7 flex font-osaka flex-col space-y-3 text-3xl md:text-6xl text-brightGreen'>
                 <div>
                     <Link to={'/anime'}
                     onClick={() => setOpen(false)}
@@ -73,6 +73,14 @@ const Menu = ({ showBanner = true}) => {
                     className='hover-underline-animation hover:text-white after:bg-white'
                     >
                         RANDOM MANGA
+                    </Link>
+                </div>
+                <div>
+                    <Link to={'/favourites'}
+                    onClick={() => setOpen(false)}
+                    className='hover-underline-animation hover:text-white after:bg-white'
+                    >
+                        MY FAVOURITES
                     </Link>
                 </div>
             </div>
