@@ -1,7 +1,8 @@
 # Rakki - A Random Anime/Manga Generator
 
-![Rakki Logo](/public/img/rakki-logo-green.svg)
-
+<div align="center">
+<img src="./public/img/rakki-logo-green.svg" heigh="400px" width="400px"/>
+</div>
 
 ## Introduction
 This app was created as a personal project. It was made using [ReactJS](reactjs.org) and [TailwindCSS](tailwindcss.com) as CSS framework.
