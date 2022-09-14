@@ -71,7 +71,7 @@ export const RecommendationsModal = ({ from }) => {
   if (loading) return <p>Loading...</p>;
   return (
     <Modal 
-    modalTitle={`Anime like ${from.title.romaji}`} 
+    modalTitle={`${from.type === 'ANIME' ? 'Shows' : 'Manga'} like ${from.title.romaji}`} 
     buttonText="Show Recommendations"
     disableText="No recommendations found" 
     disabled={recommendations.length === 0}>
