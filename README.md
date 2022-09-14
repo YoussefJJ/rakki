@@ -45,24 +45,24 @@ As of writing this, the application has the following features:
 ## Randomize Anime/Manga
  Choose a random media (anime or manga) and display major info such as main plot, genres, number of episodes/chapters, tailer, etc... 
 
-May Lady Fortune be with you!
+May Lady Luck shine on you 🍀!
 
-![](./public/img/video-1.gif)
+![Random Anime or Manga](./public/img/video-1.gif)
 
 ## Media Recommendations 
 Display recommendations (according to users selected recommendations in Anilist) if you like that media title (this is also data taken from the Anilist recommendations tab)
 
-![](./public/img/video-4.gif)
+![Media Recommendations](./public/img/video-4.gif)
 
 ## Favourite Media
 Add to/Remove from favourites: You can have up to 50 favourites in either media type (anime or manga)
 
-![](./public/img/video-3.gif)
+![Favourites](./public/img/video-3.gif)
 
 ## Search Anime or Manga
 Search Anime/Manga by name
 
-![](./public/img/video-2.gif)
+![Search Anime or Manga](./public/img/video-2.gif)
 
 # Missing Features
 The app still has a some missing features such as:
