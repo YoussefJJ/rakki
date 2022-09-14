@@ -42,10 +42,27 @@ $ npm start # Run the React app
 
 # Features
 As of writing this, the application has the following features:
-- Display Media (Anime/Movie or Manga/Light Novel/Novel etc...) info such as main plot, genres, number of episodes/chapters, trailer,  etc...
-- Display recommendations if you like that media title (this is also data taken from the Anilist recommendations tab)
-- Add to/Remove from favourites: You can have up to 50 favourites in either media type (anime or manga)
-- Search Anime/Manga by name
+## Randomize Anime/Manga
+ Choose a random media (anime or manga) and display major info such as main plot, genres, number of episodes/chapters, tailer, etc... 
+
+May Lady Fortune be with you!
+
+![](./public/img/video-1.gif)
+
+## Media Recommendations 
+Display recommendations (according to users selected recommendations in Anilist) if you like that media title (this is also data taken from the Anilist recommendations tab)
+
+![](./public/img/video-4.gif)
+
+## Favourite Media
+Add to/Remove from favourites: You can have up to 50 favourites in either media type (anime or manga)
+
+![](./public/img/video-3.gif)
+
+## Search Anime or Manga
+Search Anime/Manga by name
+
+![](./public/img/video-2.gif)
 
 # Missing Features
 The app still has a some missing features such as:
