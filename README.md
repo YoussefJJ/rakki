@@ -41,7 +41,11 @@ $ npm start # Run the React app
 ``` 
 
 # Features
-As of writing this, the application has the following features:
+As mentioned previously, Rakki gets all of it's data from the Anilist API, and I've added the ability to select a random anime or manga on the fly. 
+
+The reason that, from my experience , it's always bothersome for me to look for an anime to watch, or select one from my backlog and even that process takes a lot of time 😅. 
+
+So I've made Rakki 😊, a simple application with a simple interface, and some easter eggs sprinkled here and there 😉.
 ## Randomize Anime/Manga
  Choose a random media (anime or manga) and display major info such as main plot, genres, number of episodes/chapters, tailer, etc... 
 
@@ -50,7 +54,7 @@ May Lady Luck shine on you 🍀!
 ![Random Anime or Manga](./public/img/video-1.gif)
 
 ## Media Recommendations 
-Display recommendations (according to users selected recommendations in Anilist) if you like that media title (this is also data taken from the Anilist recommendations tab)
+If you like a media title (anime or manga) you can display other shows or manga like it (according to recommendations submitted by users in Anilist).
 
 ![Media Recommendations](./public/img/video-4.gif)
 
