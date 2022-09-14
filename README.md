@@ -5,7 +5,7 @@
 </div>
 
 ## Introduction
-This app was created as a personal project. It was made using [ReactJS](reactjs.org) and [TailwindCSS](tailwindcss.com) as CSS framework.
+This app was created as a personal project. It was made using [ReactJS](https://reactjs.org) and [TailwindCSS](https://tailwindcss.com) as CSS framework.
 <div align=center>
 <img src="./public/img/React-icon.svg.png"
 height="64px"/>
