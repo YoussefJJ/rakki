@@ -1,6 +1,5 @@
 import React from "react";
 import AnimeDetailsContent from "./AnimeDetailsContent";
-import AnimeDetailsTab from "./AnimeDetailsTab";
 
 function AnimeDetails({
     format,

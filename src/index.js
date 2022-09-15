@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import MediaContextProvider, { Store } from './contexts/store.context';
+import MediaContextProvider from './contexts/store.context';
 
   // setting ApolloClient
   const client = new ApolloClient({
