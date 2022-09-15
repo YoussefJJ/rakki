@@ -1,7 +1,6 @@
 import React from 'react'
 import Logo from '../../assets/img/rakki-logo-green.svg'
 import Menu from './Menu'
-import Menu2nd from './Menu2nd'
 import Search from '../Search/SearchModal'
 
 const Navbar = () => {
