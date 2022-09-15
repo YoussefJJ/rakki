@@ -4,6 +4,7 @@ import RandomMedia from './components/RandomMedia/RandomMedia';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/pages/Layout';
 import Favourites from './components/Favourites/Favourites';
+import NotFound from './components/pages/NotFound';
 
 function App() {
   
@@ -17,6 +18,7 @@ function App() {
           <Route path="/anime/:id" element={<AnimeScreen type="ANIME"/>}/>
           <Route path="/manga/:id" element={<AnimeScreen type="MANGA"/>}/>
           <Route path="/favourites" element={<Favourites/>}/>
+          <Route path="*" element={<NotFound/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
