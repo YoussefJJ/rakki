@@ -15,16 +15,17 @@ const Random = () => {
 
   return (
     <button 
+    id="random-btn"
     onClick={handleClick}
     className='flex px-5 items-center  space-x-2 h-full group'>
         <Dices
-        className='h-8 w-8 stroke-brightGreen group-hover:stroke-white transition-all duration-200 ease-in'
+        className='h-8 w-8 dice stroke-brightGreen group-hover:stroke-white transition-all duration-200 ease-in'
         strokeOpacity={1}
         fillOpacity={0}
         strokeWidth={1}
         />
         <div 
-        className='text-brightGreen font-bold group-hover:text-white transition-all duration-200 ease-in'>
+        className='text-brightGreen text-xs md:text-base font-bold group-hover:text-white transition-all duration-200 ease-in'>
             TRY YOUR LUCK!
         </div>
     </button>

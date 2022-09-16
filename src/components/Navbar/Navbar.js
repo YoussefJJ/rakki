@@ -2,6 +2,7 @@ import React from 'react'
 import Logo from '../../assets/img/rakki-logo-green.svg'
 import Menu from './Menu'
 import Search from '../Search/SearchModal'
+import Random from './Random'
 
 const Navbar = () => {
   return (
@@ -22,7 +23,8 @@ const Navbar = () => {
             <div className='h-1.5 absolute bottom-0 w-full bg-brightGreen -skew-x-[28deg] translate-x-1/2 md:translate-x-1/3'>
 
             </div>
-            <div className='flex px-5'>
+            <div className='flex justify-between items-center px-5 h-full w-1/2 md:w-2/3'>
+              <Random/>
               <Search/>
             </div>
         </div>
