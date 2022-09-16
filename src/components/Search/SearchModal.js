@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import SearchIcon from '../../assets/img/search.svg'
 import SearchContent from './SearchContent'
 
 const SearchModal = () => {
   const [open, setOpen] = useState(false)
+  const location = useLocation()
 
   const handleClose = (e) => {
     if (e.target.id === 'search-modal') {
@@ -24,6 +26,10 @@ const SearchModal = () => {
     }
   }, [])
   
+  useEffect(() => {
+    setOpen(false)
+  }, [location])
+
   return (
     <>
     <button onClick={() => setOpen(true)}>

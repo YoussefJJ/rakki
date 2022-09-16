@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Logo from '../../assets/img/rakki-logo-green.svg'
 import { useQuery } from '@apollo/client/react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { GET_COVERS } from '../../graphql/queries'
 import { getRandomInt } from '../../utilities/utils'
  
 
 const Menu = ({ showBanner = true}) => {
+    const location = useLocation()
   const [open, setOpen] = useState(false)
   const [covers, setCovers] = useState([])
   const [skip, setSkip] = useState(false)
@@ -31,6 +32,10 @@ const Menu = ({ showBanner = true}) => {
         setSkip(true)
     }
   })
+
+  useEffect(() => {
+    setOpen(false)
+  }, [location])
 
   useEffect(() => {
     if (covers.anime && open) {
