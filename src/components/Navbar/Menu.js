@@ -48,9 +48,23 @@ const Menu = ({ showBanner = true}) => {
         setCoverImage(covers.anime[number])
     }
   }, [open, covers])
+  
+  useEffect(() => {
+    // add event listener on escape key press
+    const handleEscape = (e) => {
+        if (e.key === 'Escape') {
+            setOpen(false)
+        }
+    }
+    document.addEventListener('keydown', handleEscape)
+    return () => {
+        document.removeEventListener('keydown', handleEscape)
+    }
+  }, [])
+
   return (
     <div id="menu">
-    <button className={`hamburger ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
+    <button className={`hamburger outline-none ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
         <span className='hamburger-top bg-brightGreen'></span>
         <span className='hamburger-middle bg-brightGreen'></span>
         <span className='hamburger-bottom bg-brightGreen'></span>
