@@ -32,11 +32,11 @@ const SearchModal = () => {
 
   return (
     <>
-    <button onClick={() => setOpen(true)}>
-        <img src={SearchIcon} alt='search' style={{
+    <button onClick={() => setOpen(true)} className='my-auto'  style={{
             height: '30px',
             width: '30px',
-        }}/>
+        }}>
+        <img src={SearchIcon} alt='search' className='h-full w-full'/>
     </button>
     {open ? (
         <div 
