@@ -30,9 +30,7 @@ const RandomMedia = ({ type }) => {
         let number = getRandomInt(0, data.Page.media.length, 1)
         const mediaId = data.Page.media[number].id
         if (type === 'ANIME')
-          navigate(`/anime/${mediaId}`, {
-            replace: true
-          })
+          navigate(`/anime/${mediaId}`, {replace: true})
         else
           navigate(`/manga/${mediaId}`, {replace: true})
         // setAnimeList(data.Page.media)
