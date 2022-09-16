@@ -9,7 +9,7 @@ const RandomLoading = ({ text }) => {
             {/* <img src={Logo} alt='rakki-logo' className='loading-image'/> */}
             <div className='flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0'>
                 <img src={Nagito} alt='loading' className='loading-gif'/>
-                <span className='ml-0 sm:ml-5 text-2xl font-medium text-white loading-text'>{text}</span>
+                <span className='ml-0 sm:ml-5 text-2xl font-medium text-white loading-text font-osaka'>{text}</span>
             </div>
         </div>
     </div>
