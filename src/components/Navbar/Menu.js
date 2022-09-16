@@ -44,7 +44,7 @@ const Menu = ({ showBanner = true}) => {
     }
   }, [open, covers])
   return (
-    <div id="menu" className='p-3'>
+    <div id="menu">
     <button className={`hamburger ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
         <span className='hamburger-top bg-brightGreen'></span>
         <span className='hamburger-middle bg-brightGreen'></span>
@@ -52,7 +52,7 @@ const Menu = ({ showBanner = true}) => {
     </button>
     {/* Full screen menu */}
     <div className={`menu bg-veryDarkPurple ${open ? 'menu-open' : ''}`}>
-        <div className='w-4/5 h-full mr-auto flex flex-col justify-start space-y-10 z-10'>
+        <div className='w-4/5 h-full mr-auto flex flex-col justify-start mt-10 space-y-5 z-10 pl-10'>
             <img src={Logo} alt="RAKKI" style={{
                 height: '200px',
                 width: '300px',
@@ -62,7 +62,7 @@ const Menu = ({ showBanner = true}) => {
                     <Link to={'/anime'}
                     onClick={() => setOpen(false)}
                     onMouseEnter={() => setCoverImage(covers.anime[coverImgNumber])}
-                    className='hover-underline-animation hover:text-white after:bg-white'>
+                    className='hover-underline-animation hover:text-brightGreen after:bg-brightGreen'>
                         RANDOM ANIME
                     </Link>
                 </div>
@@ -70,7 +70,7 @@ const Menu = ({ showBanner = true}) => {
                     <Link to={'/manga'}
                     onClick={() => setOpen(false)}
                     onMouseEnter={() => setCoverImage(covers.manga[coverImgNumber])}
-                    className='hover-underline-animation hover:text-white after:bg-white'
+                    className='hover-underline-animation hover:text-brightGreen after:bg-brightGreen'
                     >
                         RANDOM MANGA
                     </Link>
@@ -78,7 +78,7 @@ const Menu = ({ showBanner = true}) => {
                 <div>
                     <Link to={'/favourites'}
                     onClick={() => setOpen(false)}
-                    className='hover-underline-animation hover:text-white after:bg-white'
+                    className='hover-underline-animation hover:text-brightGreen after:bg-brightGreen'
                     >
                         MY FAVOURITES
                     </Link>
