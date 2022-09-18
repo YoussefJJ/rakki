@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Logo from '../../assets/img/rakki-logo-green.svg'
 import { useQuery } from '@apollo/client/react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { GET_COVERS } from '../../graphql/queries'
 import { getRandomInt } from '../../utilities/utils'
  
 
 const Menu = ({ showBanner = true}) => {
+    const location = useLocation()
   const [open, setOpen] = useState(false)
   const [covers, setCovers] = useState([])
   const [skip, setSkip] = useState(false)
@@ -33,6 +34,10 @@ const Menu = ({ showBanner = true}) => {
   })
 
   useEffect(() => {
+    setOpen(false)
+  }, [location])
+
+  useEffect(() => {
     if (covers.anime && open) {
         let number = getRandomInt(0, covers.anime.length - 1)
 
@@ -43,16 +48,30 @@ const Menu = ({ showBanner = true}) => {
         setCoverImage(covers.anime[number])
     }
   }, [open, covers])
+  
+  useEffect(() => {
+    // add event listener on escape key press
+    const handleEscape = (e) => {
+        if (e.key === 'Escape') {
+            setOpen(false)
+        }
+    }
+    document.addEventListener('keydown', handleEscape)
+    return () => {
+        document.removeEventListener('keydown', handleEscape)
+    }
+  }, [])
+
   return (
-    <div id="menu" className='p-3'>
-    <button className={`hamburger ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
+    <div id="menu">
+    <button className={`hamburger outline-none ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
         <span className='hamburger-top bg-brightGreen'></span>
         <span className='hamburger-middle bg-brightGreen'></span>
         <span className='hamburger-bottom bg-brightGreen'></span>
     </button>
     {/* Full screen menu */}
     <div className={`menu bg-veryDarkPurple ${open ? 'menu-open' : ''}`}>
-        <div className='w-4/5 h-full mr-auto flex flex-col justify-start space-y-10 z-10'>
+        <div className='w-4/5 h-full mr-auto flex flex-col justify-start mt-10 space-y-5 z-10 pl-10'>
             <img src={Logo} alt="RAKKI" style={{
                 height: '200px',
                 width: '300px',
@@ -62,7 +81,7 @@ const Menu = ({ showBanner = true}) => {
                     <Link to={'/anime'}
                     onClick={() => setOpen(false)}
                     onMouseEnter={() => setCoverImage(covers.anime[coverImgNumber])}
-                    className='hover-underline-animation hover:text-white after:bg-white'>
+                    className='hover-underline-animation hover:text-brightGreen after:bg-brightGreen'>
                         RANDOM ANIME
                     </Link>
                 </div>
@@ -70,7 +89,7 @@ const Menu = ({ showBanner = true}) => {
                     <Link to={'/manga'}
                     onClick={() => setOpen(false)}
                     onMouseEnter={() => setCoverImage(covers.manga[coverImgNumber])}
-                    className='hover-underline-animation hover:text-white after:bg-white'
+                    className='hover-underline-animation hover:text-brightGreen after:bg-brightGreen'
                     >
                         RANDOM MANGA
                     </Link>
@@ -78,7 +97,7 @@ const Menu = ({ showBanner = true}) => {
                 <div>
                     <Link to={'/favourites'}
                     onClick={() => setOpen(false)}
-                    className='hover-underline-animation hover:text-white after:bg-white'
+                    className='hover-underline-animation hover:text-brightGreen after:bg-brightGreen'
                     >
                         MY FAVOURITES
                     </Link>

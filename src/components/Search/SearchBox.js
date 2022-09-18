@@ -8,7 +8,7 @@ const SearchBox = ({ onChange }) => {
         onChange={onChange}
         placeholder='Search anime or manga...'
         className={`w-4/5 outline-none border-2 placeholder:text-brightGreen\\
-         border-brightGreen px-4 py-2 shadow-brightGreen bg-transparent text-brightGreen`}
+         border-brightGreen px-4 py-2 text-sm md:text-base shadow-brightGreen bg-transparent text-brightGreen`}
     />
   )
 }

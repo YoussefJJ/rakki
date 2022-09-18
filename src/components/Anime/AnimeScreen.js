@@ -75,7 +75,7 @@ function AnimeScreen({ type }) {
   if (loading) 
     return <RandomLoading text={"Loading"}/>;
   if (error) 
-    return (<MediaError/>);
+    return (<MediaError error={error}/>);
 
   return (
     <>

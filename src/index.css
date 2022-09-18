@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   height: 100vh;
 }
@@ -576,6 +580,10 @@ input:checked + .slider .off
 
 }
 
+#random-btn:hover > .dice {
+  animation: float 1s ease-in-out infinite;
+}
+
 .toaster {
   position: fixed;
   z-index: 9999;
@@ -614,6 +622,19 @@ input:checked + .slider .off
 .bottom-left {
   bottom: 0;
   left: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+  
 }
 
 @keyframes fadeIn {
