@@ -10,7 +10,6 @@ export function useToaster () {
             setTOut(null)
         }
         setShow(true)
-        console.log("here")
         const timeout = setTimeout(() => {
             setShow(false)
         }, 3000)
