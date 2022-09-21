@@ -102,6 +102,14 @@ const Menu = ({ showBanner = true}) => {
                         MY FAVOURITES
                     </Link>
                 </div>
+                <div>
+                    <Link to={'/about'}
+                    onClick={() => setOpen(false)}
+                    className='hover-underline-animation hover:text-brightGreen after:bg-brightGreen'
+                    >
+                        ABOUT
+                    </Link>
+                </div>
             </div>
         </div>
         <div className={`bg-veryDarkPurple/70 border-4 border-black shadow-greenRecShadow-md w-full hidden h-full absolute -left-1/3 top-1/2 md:block`} style={{
