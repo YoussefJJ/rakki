@@ -34,7 +34,7 @@ const About = () => {
                                 Nagito(Loading GIF) is a sprite animation from the game <a className='hover:underline font-bold' target="_blank" href='https://store.steampowered.com/app/413420/Danganronpa_2_Goodbye_Despair?snr=1_7_15__13'>Danganronpa 2: Goodbye Despair</a>
                             </li>
                             <li>
-                                Cat GIF belongs to <a href='https://weheartit.com/entry/185031802' target="_blank" className="hover:underline font-bold text-white">Muffin</a>
+                                Cat GIF made by <a href='https://weheartit.com/entry/185031802' target="_blank" className="hover:underline font-bold text-white">Muffin</a>
                             </li>
                         </ul>
                     </div>
