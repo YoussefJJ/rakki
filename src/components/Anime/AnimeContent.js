@@ -53,7 +53,7 @@ export const AnimeContent = ({anime}) => {
         </div>
           {/* <h1 className="hidden md:block text-white text-2xl text-center md:text-4xl md:text-left font-bold">{anime.title.romaji}</h1> */}
           <div className='flex flex-col h-2/3'>
-            <AnimePlot plot={anime.description}/>
+            <AnimePlot anime={anime}/>
             <div className="flex flex-col items-start mt-3 2xl:mt-18">
               <AnimeInfo infoTitle={'Genres'}>{anime.genres.map(genre => genre).join(', ')}</AnimeInfo>
               {anime.type === 'ANIME' && <AnimeInfo infoTitle={'Studios'}>{anime.studios.edges.filter(studio => studio.node.isAnimationStudio === true).map(studio => studio.node.name).join(', ')}</AnimeInfo>}
