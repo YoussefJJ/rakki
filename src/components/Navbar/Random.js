@@ -17,9 +17,9 @@ const Random = () => {
     <button 
     id="random-btn"
     onClick={handleClick}
-    className='flex px-5 items-center  space-x-2 h-full group'>
+    className='flex flex-col px-5 items-center justify-center h-full group md:flex-row md:space-x-2'>
         <Dices
-        className='h-8 w-8 dice stroke-brightGreen group-hover:stroke-white transition-all duration-200 ease-in'
+        className='h-6 w-6 md:h-8 md:w-8 dice stroke-brightGreen group-hover:stroke-white transition-all duration-200 ease-in'
         strokeOpacity={1}
         fillOpacity={0}
         strokeWidth={1}
