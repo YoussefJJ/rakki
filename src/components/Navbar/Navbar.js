@@ -23,9 +23,9 @@ const Navbar = () => {
             <div className='h-1.5 absolute bottom-0 w-full bg-brightGreen -skew-x-[28deg] translate-x-1/2 md:translate-x-1/3'>
 
             </div>
-            <div className='flex justify-between items-center px-5 h-full w-1/2 md:w-2/3'>
-              <Random/>
+            <div className='flex flex-row-reverse justify-start items-center px-5 h-full w-1/2 md:w-2/3'>
               <Search/>
+              <Random/>
             </div>
         </div>
     </nav>
