@@ -13,7 +13,7 @@ const About = () => {
                 <h1 className='text-2xl font-bold text-brightGreen'>Rakki 🍀</h1>
                 <div className='p-1 text-white text-large'>
                     <h1 className='font-bold'>A random anime/manga generator</h1>
-                    <p >Made with ♡ by YoussefJJ</p>
+                    <p >Made with ♡ by <a href='https://github.com/YoussefJJ' target="_blank" className='hover:underline font-bold'>YoussefJJ</a></p>
                     <p className='inline-block'>You can check the source code on <a href="https://github.com/YoussefJJ/rakki" target="_blank" className='font-bold hover:underline inline-block text-center'>
                         GitHub
                         <img src={GITHUB_LOGO} className='float-right h-6 w-6 ml-1'/>
