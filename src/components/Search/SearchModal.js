@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import {ReactComponent as Magnifier} from '../../assets/img/magnifier.svg'
 import { useLocation } from 'react-router-dom'
 import SearchIcon from '../../assets/img/search.svg'
 import SearchContent from './SearchContent'
@@ -32,11 +33,17 @@ const SearchModal = () => {
 
   return (
     <>
-    <button onClick={() => setOpen(true)} className='my-auto'  style={{
+    <button 
+    onClick={() => setOpen(true)} 
+    className='group my-auto'  
+    style={{
             height: '30px',
             width: '30px',
         }}>
-        <img src={SearchIcon} alt='search' className='h-full w-full'/>
+        <Magnifier 
+        strokeWidth={6}
+        className='h-full w-full group-hover:stroke-white stroke-brightGreen fill-transparent transition-all duration-150 ease-linear'
+        />
     </button>
     {open ? (
         <div 
