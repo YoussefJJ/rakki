@@ -64,10 +64,10 @@ const Menu = ({ showBanner = true}) => {
 
   return (
     <div id="menu">
-    <button className={`hamburger outline-none ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
-        <span className='hamburger-top bg-brightGreen'></span>
-        <span className='hamburger-middle bg-brightGreen'></span>
-        <span className='hamburger-bottom bg-brightGreen'></span>
+    <button className={`group hamburger outline-none ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
+        <span className='hamburger-top bg-brightGreen group-hover:bg-white'></span>
+        <span className='hamburger-middle bg-brightGreen group-hover:bg-white'></span>
+        <span className='hamburger-bottom bg-brightGreen group-hover:bg-white'></span>
     </button>
     {/* Full screen menu */}
     <div className={`menu bg-veryDarkPurple ${open ? 'menu-open' : ''}`}>
